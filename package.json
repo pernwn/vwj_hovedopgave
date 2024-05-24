@@ -24,7 +24,6 @@
     "are-we-there-yet": "^4.0.2",
     "debug": "^4.3.4",
     "framer-motion": "^11.2.6",
-    "fsevents": "^2.3.3",
     "gauge": "^5.0.2",
     "lru-cache": "^10.2.2",
     "next": "14.2.3",
