@@ -14,9 +14,6 @@ import USP from "../ui/usp";
 import { FilledBtn } from "../ui/buttons";
 import Image from "next/legacy/image";
 
-
-
-
 const circles = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0, transition: { duration: 2, yoyo: Infinity } },
@@ -62,26 +59,32 @@ const CircleCard = () => {
               layout="fill"
             />
           </CardHeader>
-          <CardBody className="flex flex-col gap-2 py-8">
-            <h3 className="text-h3">Bjarke Petersen</h3>
-            <h6 className="text-h6">IT Security Entrepreneur</h6>
+          <CardBody className="flex flex-col gap-4 py-8">
+            <div>
+              <h3 className="text-h3">Bjarke Petersen</h3>
+              <h6 className="text-h6">IT Security Entrepreneur</h6>
+            </div>
+
             <p className="text-p leading-tight">
               CyberMinds er hjemstedet for Danmarks bedste cybersec freelancere,
               samt industriens go-to for cybersec ydelser.
             </p>
-
             <p className="text-p leading-tight">
-              Vi taler cybersec&apos;sk, vi tager branchens laveste cut og vi kan
-              bedre end de fleste, hjælpe med at italesætte forretningsbehovet
-              og omsætte det til løsninger.
+              Vi taler cybersec&apos;sk, vi tager branchens laveste cut og vi
+              kan bedre end de fleste, hjælpe med at italesætte
+              forretningsbehovet og omsætte det til løsninger.
             </p>
             <Link href="https://www.linkedin.com/in/bjarke-n-petersen/">
               <Button
                 size="sm"
-                className="rounded-full w-full flex justify-center gap-2 mt-4 bg-clip-padding  text-cmwhite items-center bg-cmaccent/75 ring-cmaccent/75 ring-2 hover:bg-cmaccent hover:ring-[#ffad99] hover:cursor-pointer transition-color ease-linear  "
+                className="rounded-full w-fit flex justify-between gap-4 mt-4 bg-clip-padding  text-cmwhite items-center bg-cmaccent/75 ring-cmaccent/75 ring-2 hover:bg-cmaccent hover:ring-[#ffad99] hover:cursor-pointer transition-color ease-linear  "
               >
-                <FontAwesomeIcon icon={faLinkedin} size="2xl" />
-                <p className="text-md text-current normal-case">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  size="2xl"
+                  className="object-left"
+                />
+                <p className="text-md text-current normal-case object-right">
                   Skab forbindelse
                 </p>
               </Button>

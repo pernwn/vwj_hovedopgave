@@ -50,6 +50,7 @@ module.exports = {
         h3: "2.369rem",
         h2: "3.158rem",
         h1: "4.210rem",
+        '2xl':"5rem"
       },
 
       dropShadow: {

@@ -2,9 +2,7 @@
 import React from "react";
 
 import { Button, IconButton } from "@material-tailwind/react";
-
-
-
+ 
 export const FilledBtn = (props) => {
   const { title, url, icon } = props;
 

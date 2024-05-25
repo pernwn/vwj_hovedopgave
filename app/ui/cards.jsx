@@ -5,7 +5,6 @@ import { Divider } from "@mui/material";
 import styles from "../style";
 import { Rating } from "./reviews";
 
-
 import { motion } from "framer-motion";
 
 import {
@@ -17,7 +16,6 @@ import {
   Card,
 } from "@material-tailwind/react";
 import Image from "next/legacy/image";
-
 
 export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
   return (
@@ -33,13 +31,12 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
       <CardBody>
         <div className="flex flex-row pb-8 w-full h-full space-x-4">
           <div className="px-2 rounded-full">
-            <Image 
+            <Image
               src={avatarImg}
               alt="Customer Img"
               className="rounded-full"
               width={175}
               height={175}
-
             />
           </div>
           <div className="w-full space-y-2">
@@ -54,6 +51,30 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
         </div>
       </CardBody>
     </motion.div>
+  );
+};
+
+export const SimpleCardTwo = ({ content, title }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Card
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease flex-col flex-end rounded-lg pt-8 pb-4 px-8 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}>
+      <CardBody className="relative w-full h-2/3">
+        <h5 className={`text-[1.6rem] font-medium text-cmwhite flex justify-center ${isHovered ? "translate-y-0" : "translate-y-16"} transition-all ease-linear duration-300 `}>{ title }</h5>
+        <div
+          className={`w-fit h-fit py-2 rounded-xl transition-all ease-linear duration-400 ${
+            isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <p className="text-[1.1rem] leading-tight w-fit text-white/70">
+            {content}
+          </p>
+        </div>
+      </CardBody>
+    </Card>
   );
 };
 
@@ -85,7 +106,6 @@ export const SimpleCard = ({ content, action }) => {
     </Popover>
   );
 };
-
 
 export const ImgCard = ({ title, content, holderImg }) => {
   return (
