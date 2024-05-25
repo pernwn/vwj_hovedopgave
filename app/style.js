@@ -1,3 +1,7 @@
+/* 
+Denne kode definerer styling- og layoutvariabler for at gøre det nemt 
+at opretholde en konsistent visuel æstetik på tværs af forskellige sektioner og komponenter på websitet */
+
 const styles = {
   boxWidth: "xl:max-w-[1280px] w-full",
 

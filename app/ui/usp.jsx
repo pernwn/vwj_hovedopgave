@@ -2,8 +2,8 @@ import React from "react";
 import styles from "../style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBrain, faPeopleArrows, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
-//import { OutlinedBtn } from "./Buttons";
 
+// USP'er i flexbox med ikon og tekst
 const USP = () => {
   return (
     <div className={`flex flex-row justify-evenly text-h4 py-16 text-cmaccent`}>

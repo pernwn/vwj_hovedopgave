@@ -6,7 +6,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import avatar1 from '../assets/backgrounds/avatar1.png'
+import avatar1 from "../assets/backgrounds/avatar1.png";
 import avatar2 from "../assets/backgrounds/avatar2.png";
 import avatar3 from "../assets/backgrounds/avatar3.png";
 import avatar4 from "../assets/backgrounds/avatar4.png";
@@ -21,6 +21,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ReviewCard } from "./cards";
 
+//Array af anmeldelser
 const reviews = [
   {
     id: 1,
@@ -102,31 +103,44 @@ const reviews = [
     avatar: avatar10,
     rating: 3,
   },
-  
 ];
 
+//Funktion til at vise stjerner baseret på bedømmelse
 export const Rating = ({ rating }) => {
   return (
     <div className="flex justify-between w-1/2">
+      {/* 
+    Opretter array med 5 elementer (standard for bedømmelse). 
+    Mapper gennem arrayet af 5 eleementer; første felt (_) ignoreres, andet felt (i) er indeks
+    */}
       {[...Array(5)].map((_, i) => (
         <FontAwesomeIcon
           icon={faStar}
           key={i}
           className={i < rating ? "text-cmaccent" : "text-cmwhite/30"}
+          /*
+          Ternary operator: bestemmer klassen for ikonet baseret på indekset sammenlignet med 'rating' i reviews arrayet
+          Hvis indeks er mindre end rating er stjernen udfyldt med accentfarven, ellers er den hvid med 30% gennemsigtighed
+          Den let gennemsigtige stjerne indikerer at den er 'inaktiv', altså der er maksimum af 5 stjerner og baseret på rating i reviews array er de oranger stjerne en visuel repræsentation for 
+            antallet af stjerner givet
+          */
         />
       ))}
     </div>
   );
 };
 
+//Komponenten til at vise anmeldelserne i en karusel
 export const ReviewComp = () => {
-  const duplicateSlides = [...reviews, ...reviews];
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const duplicateSlides = [...reviews, ...reviews]; // Duplikerer anmeldelserne for at simulere en uendelig karusel
+  const [currentSlide, setCurrentSlide] = useState(0); // Holder styr på det aktuelle slide
 
+  // Funktion der håndterer navigering af karusellen
   const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % reviews.length);
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % reviews.length); //Øger 'currentslide' med 1, og hvis den når enden af starten. Modulo operator (%) dividerer prevSlide + 1 med længden af arrayet for at fastlægge den aktuelle placering og går tilbage til start hvis man når enden
   };
 
+  // Mindsker 'currentslide' med 1
   const handlePrevSlide = () => {
     setCurrentSlide(
       (prevSlide) => (prevSlide - 1 + reviews.length) % reviews.length
@@ -139,7 +153,7 @@ export const ReviewComp = () => {
         <motion.div
           className="flex"
           animate={{
-            x: `-${currentSlide * 10}%`,
+            x: `-${currentSlide * 10}%`, // Animerer karusellen til det aktuelle slide
           }}
           transition={{
             ease: "linear",
@@ -147,12 +161,14 @@ export const ReviewComp = () => {
           }}
           style={{ width: `${reviews.length * 100}%` }}
         >
+          {/* Mapper gennem anmeldelser og opretter et slide for hver */}
           {duplicateSlides.map((review, index) => (
             <div
               key={index}
               className="flex-shrink-0"
               style={{ width: `${100 / reviews.length}%` }}
             >
+              {/* Viser en enkelt anmeldelse på et anmeldelses kort lavet i cards.jsx med props */}
               <ReviewCard
                 key={review.id}
                 name={review.name}
@@ -166,30 +182,31 @@ export const ReviewComp = () => {
         </motion.div>
       </div>
 
+      {/* Navigationsknapper til skift af slides */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center space-x-2">
         <motion.button whileTap={{ scale: 0.9 }}>
           <FontAwesomeIcon
             icon={faCircleChevronLeft}
-
             className="w-[35pt] h-[35pt] text-cmaccent px-4 hover:text-[#ED532D] hover:cursor-pointer hover:-translate-x-1 transition ease"
-            onClick={handlePrevSlide}
+            onClick={handlePrevSlide} // Klik forrige slide
           />
         </motion.button>
+
+        {/* Mapper igennem reviews arrayet (en slags breadcrumb eller pagination så man kan se ens placering i slidet) */}
         {reviews.map((_, index) => (
           <div
             key={index}
             className={`w-2 h-2 rounded-full cursor-pointer ${
               index === currentSlide ? "bg-cmaccent" : "bg-cmsecondary/40"
             }`}
-            onClick={() => setCurrentSlide(index)}
-          ></div>
+            onClick={() => setCurrentSlide(index)} // Ved klik på en af dutterne går den til det bestemte slide
+          />
         ))}
-        <motion.button whileTap={{scale:0.9}}>
+        <motion.button whileTap={{ scale: 0.9 }}>
           <FontAwesomeIcon
             icon={faCircleChevronRight}
-
             className="w-[35pt] h-[35pt] text-cmaccent px-4 hover:text-[#ED532D] hover:cursor-pointer hover:translate-x-1 transition ease"
-            onClick={handleNextSlide}
+            onClick={handleNextSlide} //Klik for næste slide
           />
         </motion.button>
       </div>

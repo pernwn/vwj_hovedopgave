@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from "../style";
 import { motion } from "framer-motion";
@@ -13,12 +13,63 @@ import { Button } from "@material-tailwind/react";
 import USP from "../ui/usp";
 import { FilledBtn } from "../ui/buttons";
 import Image from "next/legacy/image";
+import { useInView } from "react-intersection-observer";
 
 const circles = {
   initial: { opacity: 0, y: 50 },
-  animate: { opacity: 1, y: 0, transition: { duration: 2, yoyo: Infinity } },
+  animate: { opacity: 1, y: 0, transition: { duration: 2 } },
+  hidden: { opacity: 0, y: 50, transition: { duration: 2 } },
+};
+
+//Samme cirkler/animation som i info.jsx, blot med andre størrelser - BackgroundCircles kan laves til sin egen komponent for at implementerer på tværs af hjemmesiden hvis CyberMinds ønsker flere undersider
+const BackgroundCircles = () => {
+//Anvender useInView hook for at tjekke om elmentet er indenfor viewport 
+  const [ref, inView] = useInView({
+    threshold: 0.2, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
+  });
+
+
+  return (
+    //Cirkler i forskellige størrelser
+    <div className="absolute inset-0 overflow-hidden">
+      <motion.div
+        ref={ref}
+        className="w-[30em] h-[30em] xl:w-[36em] xl:h-[36em] border-[1.8rem] border-cmaccent rounded-full absolute top-[2%] left-[12%] xl:left-[20%] xl:top-0"
+        variants={circles}
+        initial="initial"
+        animate={inView ? "animate" : "hidden"} //Aktiverer animationen hvis den er inview
+      >
+        <Image
+          src="/roundbuilding.jpg"
+          alt="Decorative Circle 3"
+          className="rounded-full"
+          layout="fill"
+          objectFit="cover"
+        />
+      </motion.div>
+      <motion.div
+        ref={ref}
+        className="w-[18em] h-[18em] xl:w-[22em] xl:h-[22em] bg-cmaccent rounded-full absolute top-[40%] left-[22%] xl:left-[30%]"
+        variants={circles}
+        initial="initial"
+        animate={inView ? "animate" : "hidden"}
+      />
+      <motion.div
+        ref={ref}
+        className="w-[24em] h-[24em] xl:w-[28em] xl:h-[28em] bg-cmprimary rounded-full absolute top-[38%] right-[16%] xl:right-[28%] "
+        variants={circles}
+        initial="initial"
+        animate={inView ? "animate" : "hidden"}
+      />
+    </div>
+  );
 };
 const CircleCard = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.8, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
+  });
+
+
   return (
     <section className="pb-28 xl:pb-12">
       <USP />
@@ -42,9 +93,10 @@ const CircleCard = () => {
         </div>
       </Card>
       <motion.div
+        ref={ref}
         variants={circles}
         initial="initial"
-        animate="animate"
+        animate={inView ? "animate" : "hidden"}
         className="flex justify-center"
       >
         <Card
@@ -93,39 +145,6 @@ const CircleCard = () => {
         </Card>
       </motion.div>
     </section>
-  );
-};
-
-const BackgroundCircles = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      <motion.div
-        className="w-[30em] h-[30em] xl:w-[36em] xl:h-[36em] border-[1.8rem] border-cmaccent rounded-full absolute top-[2%] left-[12%] xl:left-[20%] xl:top-0"
-        variants={circles}
-        initial="initial"
-        animate="animate"
-      >
-        <Image
-          src="/roundbuilding.jpg"
-          alt="Decorative Circle 3"
-          className="rounded-full"
-          layout="fill"
-          objectFit="cover"
-        />
-      </motion.div>
-      <motion.div
-        className="w-[18em] h-[18em] xl:w-[22em] xl:h-[22em] bg-cmaccent rounded-full absolute top-[40%] left-[22%] xl:left-[30%]"
-        variants={circles}
-        initial="initial"
-        animate="animate"
-      />
-      <motion.div
-        className="w-[24em] h-[24em] xl:w-[28em] xl:h-[28em] bg-cmprimary rounded-full absolute top-[38%] right-[16%] xl:right-[28%] "
-        variants={circles}
-        initial="initial"
-        animate="animate"
-      />
-    </div>
   );
 };
 

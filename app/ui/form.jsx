@@ -15,6 +15,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
+//Checkbox importeret fra Material UI hvor tailwindcss ikke kan ændre styling
 const CustomCheckbox = styled(Checkbox)(({ error }) => ({
   color: error ? "#DE1704" : "#86bae2",
   "&.Mui-checked": {
@@ -22,11 +23,14 @@ const CustomCheckbox = styled(Checkbox)(({ error }) => ({
   },
 }));
 
+//Kontaktformular med brugerinteraktion
 export default function FormComp() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(!open);
-
-  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  // useState Hooks til at håndtere tilstanden af dialogvinduet, deaktiveret knap, formværdier og fejlmeddelelser
+  
+  const [open, setOpen] = useState(false); // Holder styr på om dialog elementet er åbent eller ej
+  const handleOpen = () => setOpen(!open); // Skifter værdien af open for at lukke eller åbne dialog element
+  
+  //Formværdier
   const [formValues, setFormValues] = useState({
     firstName: "",
     lastName: "",
@@ -34,6 +38,8 @@ export default function FormComp() {
     message: "",
     check: false,
   });
+
+  //Boolean for fejlmeddelser - tjekker om der er fejl i formularen (manglende udflydning eller ugyldig email)
   const [errors, setErrors] = useState({
     firstName: false,
     lastName: false,
@@ -43,6 +49,7 @@ export default function FormComp() {
     check: false,
   });
 
+   // handleChange-funktionen håndterer ændringer i inputfelterne og validerer e-mail-format - opdaterer formvalues tilstand med de nye værdier
   const handleChange = (e) => {
     const { id, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
@@ -55,11 +62,13 @@ export default function FormComp() {
     }
   };
 
+    // validateEmail-funktionen bruges til at validere e-mail-adresser ved hjælp af en regelmæssig udtrykning
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
+    // handleSubmit-funktionen håndterer formularen, når den sendes - validerer alle felter
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {
@@ -72,6 +81,7 @@ export default function FormComp() {
     };
     setErrors(newErrors);
 
+    // Åbner dialogvinduet, hvis der ikke er nogen fejl og e-mail er gyldig
     if (
       !Object.values(newErrors).some((error) => error) &&
       validateEmail(formValues.contact)
@@ -80,6 +90,9 @@ export default function FormComp() {
     }
   };
 
+  //Submit knap deaktiveret tilstand eller ej
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false); // Til at styre deaktiveret knap denne er ikke implementeret til fordel for fejlmeddelser for hvert tekstfelt
+  // useEffect Hook til at opdatere deaktiveret knap baseret på formværdierne
   useEffect(() => {
     const { firstName, lastName, contact, message, check } = formValues;
     const allFieldsFilled =

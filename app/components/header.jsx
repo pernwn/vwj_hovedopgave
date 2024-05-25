@@ -11,7 +11,7 @@ import styles from "../style";
 
 const Header = () => {
 
-  const [isHovering, setIsHovering] = useState(false);
+  const [isHovering, setIsHovering] = useState(false); //state variabel til at håndtere hover
   const handleHover = () => setIsHovering(true);
   const handleNotHover = () => setIsHovering(false);
 
@@ -28,11 +28,12 @@ const Header = () => {
       <Button
         onMouseEnter={handleHover}
         onMouseLeave={handleNotHover}
-        className="translate-y-0 hover:-translate-y-1 active:-translate-y-2 hover:cursor-pointer my-1.5 shadow-md  bg-cmaccent rounded-full border-solid border-cmaccent border-2 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-sm hover:bg-cmprimary hover:bg-opacity-40 hover:border-cmprimary hover:text-cmwhite transition-all ease-in-out duration-300"
+        className="translate-y-0 hover:-translate-y-1 active:-translate-y-2 hover:cursor-pointer my-2.5 w-[16rem] shadow-md  bg-cmaccent rounded-full border-solid border-cmaccent border-2 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-sm hover:bg-cmprimary hover:bg-opacity-40 hover:border-cmprimary transition ease-linear duration-300"
       >
-        
+        {/* Ternary operator (conditional) der tjekker om musen er over knappen eller ej. Hvis den ikke er viser knappen default, hvis den er viser knappen hover-state */}
         {isHovering ? (
-          <p className="mix-blend-soft-light font-semibold text-lg text-cmwhite">
+          //Hvis hover vis denne tekst
+          <p className="font-semibold text-lg text-cmwhite">
             <FontAwesomeIcon
               icon={faPhoneVolume}
               size="2xl"
@@ -41,7 +42,8 @@ const Header = () => {
             {"+45 1234 5678"}
           </p>
         ) : (
-          <p className="mix-blend-hard-light font-medium text-lg text-cmwhite">
+            //Ellers hvis ikke hover så vis denne tekst
+          <p className="font-medium text-lg text-cmwhite">
             <FontAwesomeIcon
               icon={faPhone}
               size="2xl"

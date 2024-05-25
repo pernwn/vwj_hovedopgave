@@ -8,15 +8,14 @@ import { Rating } from "./reviews";
 import { motion } from "framer-motion";
 
 import {
-  Popover,
-  PopoverHandler,
-  PopoverContent,
   CardHeader,
   CardBody,
   Card,
 } from "@material-tailwind/react";
 import Image from "next/legacy/image";
 
+
+//Anmeldelseskort opdelt i to: øverst - brugerinfo, nederst - anmeldelsetekst
 export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
   return (
     <motion.div
@@ -54,6 +53,7 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
   );
 };
 
+//Simpelt kort med hover
 export const SimpleCardTwo = ({ content, title }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -61,15 +61,15 @@ export const SimpleCardTwo = ({ content, title }) => {
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease flex-col flex-end rounded-lg pt-8 pb-4 px-8  shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}>
+      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease flex-col flex-end rounded-lg pt-8 pb-2 px-8 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}>
       <CardBody className="relative w-full h-2/3">
-        <h5 className={`text-[1.6rem] font-medium text-cmwhite flex justify-center ${isHovered ? "translate-y-0" : "translate-y-16 xl:translate-y-12"} transition-all ease-linear duration-300 `}>{ title }</h5>
+        <h5 className={`text-[1.7rem] font-medium text-cmwhite flex justify-center ${isHovered ? "translate-y-0" : "translate-y-8 xl:translate-y-6"} transition-all ease-linear duration-300 `}>{ title }</h5>
         <div
           className={`w-fit h-fit py-2 rounded-xl transition-all ease-linear duration-400 ${
             isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <p className="text-[1.1rem] leading-tight w-fit text-white/70">
+          <p className="text-[1.1rem] leading-tight w-fit text-white/75">
             {content}
           </p>
         </div>
@@ -82,7 +82,7 @@ export const SimpleCardTwo = ({ content, title }) => {
 export const ImgCard = ({ title, content, holderImg }) => {
   return (
     <Card
-      className={`${styles.flexCenter} m-2 flex-col rounded-xl xl:w-1/3 w-full h-fit p-2 space-y-4 bg-cmwhite/80`}
+      className={`${styles.flexCenter} m-2 flex-col rounded-xl w-full p-2 xl:p-6 m-6 bg-cmwhite/80`}
     >
       <CardHeader className="w-full relative h-[12rem]">
         <Image
@@ -93,7 +93,7 @@ export const ImgCard = ({ title, content, holderImg }) => {
         />
       </CardHeader>
 
-      <CardBody className="flex flex-col justify-center items-center w-full h-full space-y-2 py-2">
+      <CardBody className="flex flex-col justify-center items-center w-full h-1/2 p-2 py-8">
         <h3 className="text-h5">{title}</h3>
         <p className="text-p">{content}</p>
       </CardBody>
@@ -101,7 +101,7 @@ export const ImgCard = ({ title, content, holderImg }) => {
   );
 };
 
-//NOTE - This component was intended to have a video as placeholder, but due to load time I decided to put a placerholder img instead (code right above)
+//NOTE - // Bemærkning - Denne komponent var tiltænkt at have en video som placeholder, men på grund af indlæsningstiden besluttede jeg at bruge et billedplaceholder i stedet (kode lige ovenfor)
 // export const VidCard = ({ title, content, vid }) => {
 //   return (
 //     <Card

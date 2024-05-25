@@ -7,6 +7,9 @@ const Footer = () => {
       <CyberMindsBlueLogo
         alt="CyberMinds Logo Color Blue"
       />
+      {/* Lille tekststykke der viser copyright
+      new Date().getFullYear() genererer det aktuelle år for copyright hvor manuel ændring ikke er nødvendigt
+       */}
       <p className="text-sm">
         © {new Date().getFullYear()} CyberMinds. All Rights Reserved.
       </p>

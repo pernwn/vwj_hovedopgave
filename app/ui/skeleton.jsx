@@ -1,12 +1,10 @@
-import { Spinner } from "@material-tailwind/react";
 import styles from "../style";
 
 // Loading animation
 const shimmer =
   "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
 
-
-
+// definerer skeletkomponenter til at simulere indholdets layout, mens data indlæsesr.
 export function HeroSkeleton() {
   return (
     <section
