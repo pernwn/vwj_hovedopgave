@@ -29,7 +29,7 @@ const BackgroundCircles = () => {
     {/* Cirkel med tyk kant og billede */}
       <motion.div
         ref={ref}
-        className="w-[48em] h-[48em] border-[1.8rem] border-cmaccent rounded-full absolute bottom-[4%] left-[-18%] xl:left-[12%]"
+        className="w-[48em] h-[48em] border-[1.8rem] border-cmaccent rounded-full absolute bottom-[10%] left-[-18%] xl:left-[12%]"
         variants={circles} //Kalder variabel hvor animation er defineret
         initial="initial" //Starten på animation
         animate={inView ? "animate" : "hidden"} //Aktiverer animationen når elementet er synligt ellers er den hidden
@@ -44,14 +44,14 @@ const BackgroundCircles = () => {
       </motion.div>
       <motion.div
         ref={ref}
-        className="w-[12em] h-[12em] bg-cmaccent rounded-full absolute top-[12%] right-[5%] xl:right-[20%]"
+        className="w-[12em] h-[12em] bg-cmaccent rounded-full absolute bottom-[4%] right-[12%] xl:right-[24%] xl:bottom-[12%]"
         variants={circles}
         initial="initial"
         animate={inView ? "animate" : "hidden"}
       />
       <motion.div
         ref={ref}
-        className="w-[24em] h-[24em] bg-cmprimary rounded-full absolute flex items-center justify-center top-[14%] right-[8%] xl:right-[22%]"
+        className="w-[24em] h-[24em] bg-cmprimary rounded-full absolute flex items-center justify-center top-[28%] right-[2%] xl:right-[16%]"
         variants={circles}
         initial="initial"
         animate={inView ? "animate" : "hidden"}
