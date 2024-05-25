@@ -40,16 +40,16 @@ const Faq = () => {
     ];
   return (
     <section
-      className={`${styles.padding} flex flex-row gap-2 items-start justify-center`}
+      className={`${styles.padding} flex flex-row items-start justify-center`}
     >
-      <div className="space-y-2 w-2/4 xl:w-1/5">
+      <div className="space-y-2 w-1/3 xl:w-1/5">
         <h2 className="text-h2">Fortsat i tvivl?</h2>
         <h4 className="text-h4">Få svar i vores FAQ</h4>
         <p className="text-p">
           Find svar på oftede stillede spørgsmål for hjælp og klarhed.
         </p>
       </div>
-      <div className="w-3/4 xl:w-1/4">
+      <div className="w-1/2 xl:w-1/4">
 {accordions.map((accordion, index) => (
         <Accordion
           key={index}

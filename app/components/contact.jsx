@@ -9,9 +9,9 @@ import FormComp from "../ui/form";
 const Contact = () => {
   return (
     <section
-      className={`${styles.padding} xl:px-44 flex-row gap-16 bg-gradient-tr ${styles.flexStart} rounded-bl-[12em] rounded-tr-[12em]`}
+      className={`${styles.padding} xl:px-48 flex-row gap-20 xl:gap-16 bg-gradient-tr ${styles.flexStart} rounded-bl-[12em] rounded-tr-[12em]`}
     >
-      <div className={`flex-col w-1/2 space-y-6 px-8 py-12 xl:w-1/4`}>
+      <div className={`flex-col w-1/3 space-y-6 py-12 xl:w-1/5`}>
         <h2 className="text-h2 text-cmwhite">
           Klar til at styrke din virksomheds IT-sikkerhed?
         </h2>
