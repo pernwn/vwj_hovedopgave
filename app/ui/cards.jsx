@@ -61,9 +61,9 @@ export const SimpleCardTwo = ({ content, title }) => {
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease flex-col flex-end rounded-lg pt-8 pb-4 px-8 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}>
+      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease flex-col flex-end rounded-lg pt-8 pb-4 px-8  shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}>
       <CardBody className="relative w-full h-2/3">
-        <h5 className={`text-[1.6rem] font-medium text-cmwhite flex justify-center ${isHovered ? "translate-y-0" : "translate-y-16"} transition-all ease-linear duration-300 `}>{ title }</h5>
+        <h5 className={`text-[1.6rem] font-medium text-cmwhite flex justify-center ${isHovered ? "translate-y-0" : "translate-y-16 xl:translate-y-12"} transition-all ease-linear duration-300 `}>{ title }</h5>
         <div
           className={`w-fit h-fit py-2 rounded-xl transition-all ease-linear duration-400 ${
             isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -78,34 +78,6 @@ export const SimpleCardTwo = ({ content, title }) => {
   );
 };
 
-export const SimpleCard = ({ content, action }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <Popover
-      open={isHovered}
-      animate={{
-        mount: { scale: 1, y: 0 },
-        unmount: { scale: 0, y: 25 },
-      }}
-    >
-      <PopoverHandler>
-        <div
-          className={`${styles.flexCenter} w-full hover:cursor-pointer hover:bg-cmprimary/15 hover:mix-blend-color-dodge hover:ring-2 hover:ring-cmprimary transition ease flex-col rounded-lg p-8 mb-4 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <h5 className="text-[1.6rem] font-medium text-cmwhite">{action}</h5>
-        </div>
-      </PopoverHandler>
-      <PopoverContent className="bg-clip-padding bg-cmwhite/75 w-1/3 p-4 rounded-xl backdrop-filter backdrop-blur-xl border border-cmdark/5">
-        <p className="text-[1.1rem] leading-tight w-fit min-h-[8rem] text-cmdark/90">
-          {content}
-        </p>
-      </PopoverContent>
-    </Popover>
-  );
-};
 
 export const ImgCard = ({ title, content, holderImg }) => {
   return (

@@ -23,11 +23,11 @@ const CircleCard = () => {
     <section className="pb-28 xl:pb-12">
       <USP />
       <Card
-        className={`${styles.padding} bottom-4 xl:-bottom-4 relative flex items-center justify-center min-h-screen bg-transparent shadow-none`}
+        className={`${styles.padding} relative flex items-center justify-center min-h-screen bg-transparent shadow-none`}
       >
         <BackgroundCircles />
         <div
-          className={`${styles.padding} relative z-10 flex flex-col items-center justify-center w-[38em] h-[38em] xl:w-[56em] xl:h-[56em] bg-cmwhite/75 shadow-lg rounded-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-50 border border-cmdark/5`}
+          className={`${styles.padding} xl:bottom-16 relative z-10 flex flex-col items-center justify-center w-[38em] h-[38em] xl:w-[44em] xl:h-[44em] bg-cmwhite/75 shadow-lg rounded-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-50 border border-cmdark/5`}
         >
           <div className="text-center">
             <h2 className="text-h2">Hvem er CyberMinds?</h2>
@@ -48,14 +48,14 @@ const CircleCard = () => {
         className="flex justify-center"
       >
         <Card
-          className={` ${styles.paddingX} py-4 pb-8 relative shadow-lg w-2/3 h-full xl:h-[30em] xl:w-1/4 xl:bottom-8 bottom-0 grid grid-cols-2 gap-8 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
+          className={` p-4 pb-8 relative shadow-lg w-2/3 h-full xl:h-[30em] xl:w-2/4 xl:p-8 xl:pb-12 xl:bottom-8 bottom-0 grid grid-cols-2 gap-8 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
         >
           <CardHeader floated={false}>
             <Image
               objectFit="cover"
               src="/bjarke-profil.jpg"
               alt="Bjarke Petersen"
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md flex justify-center items-center"
               layout="fill"
             />
           </CardHeader>
@@ -100,7 +100,7 @@ const BackgroundCircles = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
       <motion.div
-        className="w-[28em] h-[28em] xl:w-[44em] xl:h-[44em] border-[1.8rem] border-cmaccent rounded-full absolute top-[2%] left-[8%] xl:left-[20%]"
+        className="w-[30em] h-[30em] xl:w-[36em] xl:h-[36em] border-[1.8rem] border-cmaccent rounded-full absolute top-[2%] left-[12%] xl:left-[20%] xl:top-0"
         variants={circles}
         initial="initial"
         animate="animate"
@@ -114,13 +114,13 @@ const BackgroundCircles = () => {
         />
       </motion.div>
       <motion.div
-        className="w-[18em] h-[18em] xl:w-[22em] xl:h-[22em] bg-cmaccent rounded-full absolute top-[50%] left-[22%] xl:left-[30%]"
+        className="w-[18em] h-[18em] xl:w-[22em] xl:h-[22em] bg-cmaccent rounded-full absolute top-[40%] left-[22%] xl:left-[30%]"
         variants={circles}
         initial="initial"
         animate="animate"
       />
       <motion.div
-        className="w-[24em] h-[24em] xl:w-[34em] xl:h-[34em] bg-cmprimary rounded-full absolute top-[34%] right-[8%] xl:right-[26%]"
+        className="w-[24em] h-[24em] xl:w-[28em] xl:h-[28em] bg-cmprimary rounded-full absolute top-[38%] right-[16%] xl:right-[28%] "
         variants={circles}
         initial="initial"
         animate="animate"

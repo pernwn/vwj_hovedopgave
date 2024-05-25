@@ -11,7 +11,7 @@ import { ReviewComp } from "../ui/reviews";
 
 const Para = ({ header, body }) => {
   return (
-    <div className={`${styles.flexCenter} text-center flex-col w-3/5 pb-8`}>
+    <div className={`${styles.flexCenter} text-center flex-col w-3/5 xl:w-2/5 pb-8`}>
       <h2 className="text-h2 text-cmwhite">{header}</h2>
       <p className="text-p text-cmwhite/80">{body}</p>
     </div>
@@ -24,7 +24,7 @@ const Benefits = () => {
       className={`bg-gradient-bl ${styles.padding} space-y-12 xl:space-y-28 w-full h-full rounded-tl-[12em] rounded-br-[12em]`}
     >
       {/* Services */}
-      <div className={`flex-col ${styles.flexCenter} pb-12 pt-4 w-full h-auto`}>
+      <div className={`flex-col ${styles.flexCenter} pb-12 pt-4 px-8 w-full h-auto`}>
         <Para
           header="Skræddersyet IT-sikkerhedseksperthjælp"
           body="Vi specialiserer os i at forbinde virksomheder med de bedste IT-sikkerhedsfreelancere, der imødekommer dine behov. Med vores omfattende netværk sikrer vi adgang til de mest kompetente eksperter."
