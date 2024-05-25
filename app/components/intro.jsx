@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 import USP from "../ui/usp";
 import { FilledBtn } from "../ui/buttons";
+import Image from "next/legacy/image";
 
 
 
@@ -53,10 +54,12 @@ const CircleCard = () => {
           className={` ${styles.paddingX} py-4 pb-8 relative shadow-lg w-2/3 h-full xl:h-[30em] xl:w-1/4 xl:bottom-8 bottom-0 grid grid-cols-2 gap-8 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
         >
           <CardHeader floated={false}>
-            <img
+            <Image
+              objectFit="cover"
               src="/bjarke-profil.jpg"
               alt="Bjarke Petersen"
-              className="rounded-lg shadow-md w-full h-full object-cover"
+              className="rounded-lg shadow-md"
+              layout="fill"
             />
           </CardHeader>
           <CardBody className="flex flex-col gap-2 py-8">
@@ -68,7 +71,7 @@ const CircleCard = () => {
             </p>
 
             <p className="text-p leading-tight">
-              Vi taler cybersec'sk, vi tager branchens laveste cut og vi kan
+              Vi taler cybersec&apos;sk, vi tager branchens laveste cut og vi kan
               bedre end de fleste, hjælpe med at italesætte forretningsbehovet
               og omsætte det til løsninger.
             </p>
@@ -99,10 +102,12 @@ const BackgroundCircles = () => {
         initial="initial"
         animate="animate"
       >
-        <img
+        <Image
           src="/roundbuilding.jpg"
           alt="Decorative Circle 3"
-          className="rounded-full object-cover w-full h-full"
+          className="rounded-full"
+          layout="fill"
+          objectFit="cover"
         />
       </motion.div>
       <motion.div

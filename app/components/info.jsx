@@ -8,16 +8,16 @@ import {
   Card,
 } from "@material-tailwind/react";
 import { ImgCard } from "../ui/cards";
+import Image from "next/legacy/image";
 
 const ExplainerCard = () => {
   return (
     <section className={`${styles.flexCenter} relative my-24`}>
       <BackgroundCircles />
       <Card
-      sx={{}}
         className={`${styles.flexCenter} ${styles.paddingY} overflow-hidden w-3/5 xl:w-2/5 relative rounded-2xl shadow-xl bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-75 border border-cmdark/5 bg-cmwhite`}
       >
-        <CardBody className="flex flex-row items-center justify-center w-fit h-fit">
+        <CardBody className="flex flex-row items-center justify-center w-fit h-full">
           <div className="text-center w-full flex flex-col items-center justify-center px-12 xl:px-8">
             <h2 className="text-h2">Din sikkerhed, vores ansvar</h2>
             <p className="text-p mx-12 xl:mx-80">
@@ -26,7 +26,7 @@ const ExplainerCard = () => {
               handlinger. Se her, hvordan vores dedikation til disse værdier
               former hver interaktion og beslutning, vi træffer.
             </p>
-            <div className="flex flex-col w-full h-full lg:flex-row justify-center">
+            <div className="flex flex-col w-full h-fit lg:flex-row justify-center">
               <ImgCard
                 title="Beskyttelsestiltag"
                 content="CyberMinds beskytter din virksomhed mod cybertrusler. Vores eksperter overvåger og reagerer på sikkerhedsrisici døgnet rundt for at sikre dine data og forretningskontinuitet. Se hvordan vi gør det i denne video."
@@ -54,16 +54,18 @@ const BackgroundCircles = () => {
   return (
     <div className="absolute inset-0">
       <motion.div
-        className="w-[48em] h-[48em] border-[1.8rem] border-cmaccent rounded-full absolute top-[12%] left-[-18%] xl:left-[12%]"
+        className="w-[48em] h-[48em] border-[1.8rem] border-cmaccent rounded-full absolute bottom-[4%] left-[-18%] xl:left-[12%]"
         variants={circles}
         initial="initial"
         animate="animate"
 
       >
-        <img
+        <Image
           src="/developer.png"
           alt="Developer"
-          className="rounded-full object-cover w-full h-full"
+          className="rounded-full"
+          layout="fill"
+          objectFit="cover"
         />
       </motion.div>
       <motion.div

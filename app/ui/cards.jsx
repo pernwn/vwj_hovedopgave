@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import { Divider } from "@mui/material";
 import styles from "../style";
@@ -16,7 +16,8 @@ import {
   CardBody,
   Card,
 } from "@material-tailwind/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
+
 
 export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
   return (
@@ -57,8 +58,11 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
 };
 
 export const SimpleCard = ({ content, action }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <Popover
+      open={isHovered}
       animate={{
         mount: { scale: 1, y: 0 },
         unmount: { scale: 0, y: 25 },
@@ -66,13 +70,15 @@ export const SimpleCard = ({ content, action }) => {
     >
       <PopoverHandler>
         <div
-          className={`${styles.flexCenter} w-full hover:cursor-pointer hover:bg-cmdark/35 transition ease flex-col rounded-lg p-8 mb-4 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}
+          className={`${styles.flexCenter} w-full hover:cursor-pointer hover:bg-cmprimary/15 hover:mix-blend-color-dodge hover:ring-2 hover:ring-cmprimary transition ease flex-col rounded-lg p-8 mb-4 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <h5 className="text-[1.6rem] font-medium text-cmwhite">{action}</h5>
         </div>
       </PopoverHandler>
-      <PopoverContent className="bg-clip-padding bg-cmwhite/45 w-1/4 p-4 rounded-xl backdrop-filter backdrop-blur-lg border border-cmdark/5">
-        <p className="text-[1.1rem] leading-tight w-full text-cmdark">
+      <PopoverContent className="bg-clip-padding bg-cmwhite/75 w-1/3 p-4 rounded-xl backdrop-filter backdrop-blur-xl border border-cmdark/5">
+        <p className="text-[1.1rem] leading-tight w-fit min-h-[8rem] text-cmdark/90">
           {content}
         </p>
       </PopoverContent>
@@ -84,11 +90,18 @@ export const SimpleCard = ({ content, action }) => {
 export const ImgCard = ({ title, content, holderImg }) => {
   return (
     <Card
-      className={`${styles.flexCenter} m-2 flex-col rounded-xl xl:w-1/3 w-full min-h-[50%] p-2 space-y-4 bg-cmwhite/80`}
+      className={`${styles.flexCenter} m-2 flex-col rounded-xl xl:w-1/3 w-full h-fit p-2 space-y-4 bg-cmwhite/80`}
     >
-      <CardHeader className="h-full w-full"><img src={holderImg} alt="Placeholder image"/></CardHeader>
-       
-      <CardBody className="flex flex-col justify-center items-center w-full h-full space-y-2 py-4 px-2">
+      <CardHeader className="w-full relative h-[12rem]">
+        <Image
+          src={holderImg}
+          layout="fill"
+          objectFit="cover"
+          alt="Placeholder image"
+        />
+      </CardHeader>
+
+      <CardBody className="flex flex-col justify-center items-center w-full h-full space-y-2 py-2">
         <h3 className="text-h5">{title}</h3>
         <p className="text-p">{content}</p>
       </CardBody>
