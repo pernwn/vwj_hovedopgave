@@ -82,7 +82,7 @@ export const SimpleCardTwo = ({ content, title }) => {
 export const ImgCard = ({ title, content, holderImg }) => {
   return (
     <Card
-      className={`${styles.flexCenter} m-2 flex-col rounded-xl w-full p-2 xl:p-6 m-6 bg-cmwhite/80`}
+      className={`${styles.flexCenter} flex-col rounded-xl w-full p-2 xl:p-4 m-4 xl:mx-8 bg-cmwhite/50`}
     >
       <CardHeader className="w-full relative h-[12rem]">
         <Image
