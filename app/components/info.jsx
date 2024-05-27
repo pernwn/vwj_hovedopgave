@@ -66,11 +66,11 @@ const ExplainerCard = () => {
     <section className={`${styles.flexCenter} relative my-24`}>
       <BackgroundCircles />
       <Card
-        className={`${styles.flexCenter} ${styles.paddingY} overflow-hidden w-3/5 xl:w-2/5 relative rounded-2xl shadow-lg bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-75 border border-cmdark/5 bg-cmwhite`}
+        className={`${styles.flexCenter} py-8 overflow-hidden w-3/5 xl:w-2/5 relative rounded-2xl shadow-lg bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-75 border border-cmdark/5 bg-cmwhite`}
       >
         {/* Tekstcontainer */}
         <CardBody className="flex flex-row items-center justify-center w-fit h-full">
-          <div className="text-center w-full flex flex-col items-center justify-center space-y-4 px-12 xl:px-8">
+          <div className="text-center w-full flex flex-col items-center justify-center space-y-2 px-12 xl:px-8">
             <div>
             <h2 className="text-h2">Din sikkerhed, vores ansvar</h2>
             <p className="text-p mx-12 xl:mx-24">

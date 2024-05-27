@@ -187,7 +187,7 @@ export const ReviewComp = () => {
         <motion.button whileTap={{ scale: 0.9 }}>
           <FontAwesomeIcon
             icon={faCircleChevronLeft}
-            className="w-[35pt] h-[35pt] text-cmaccent px-4 hover:text-[#ED532D] hover:cursor-pointer hover:-translate-x-1 transition ease"
+            className="w-[35pt] h-[35pt] text-cmaccent/75 px-4 hover:text-cmaccent hover:cursor-pointer hover:-translate-x-1 transition ease"
             onClick={handlePrevSlide} // Klik forrige slide
           />
         </motion.button>
@@ -205,7 +205,7 @@ export const ReviewComp = () => {
         <motion.button whileTap={{ scale: 0.9 }}>
           <FontAwesomeIcon
             icon={faCircleChevronRight}
-            className="w-[35pt] h-[35pt] text-cmaccent px-4 hover:text-[#ED532D] hover:cursor-pointer hover:translate-x-1 transition ease"
+            className="w-[35pt] h-[35pt] text-cmaccent/75 px-4 hover:text-cmaccent hover:cursor-pointer hover:translate-x-1 transition ease"
             onClick={handleNextSlide} //Klik for næste slide
           />
         </motion.button>

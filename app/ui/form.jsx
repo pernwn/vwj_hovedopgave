@@ -98,8 +98,8 @@ export default function FormComp() {
   return (
     <Card shadow={false} className="bg-transparent text-cmwhite">
       <form className="w-full max-w-xl xl:w-full " onSubmit={handleSubmit}>
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div className="flex flex-wrap -mx-3 mb-4">
+          <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
             <label
               className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
               htmlFor="firstName"
@@ -154,7 +154,7 @@ export default function FormComp() {
             )}
           </div>
         </div>
-        <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="flex flex-wrap -mx-3 mb-4">
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
@@ -194,8 +194,8 @@ export default function FormComp() {
             )}
           </div>
         </div>
-        <div className="flex flex-wrap -mx-3 mb-6">
-          <div className="w-full px-3">
+        <div className="flex flex-wrap -mx-3 mb-4">
+          <div className="w-full px-4 py-3">
             <label
               className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
               htmlFor="message"
@@ -223,7 +223,7 @@ export default function FormComp() {
             )}
           </div>
           <div className="flex flex-wrap mx-3 flex-col">
-            <div className="flex items-start">
+            <div className="flex items-start mb-2">
               <FormControlLabel
                 htmlFor="check"
                 control={
@@ -261,13 +261,13 @@ export default function FormComp() {
           <Button
             type="submit"
             variant="filled"
-            className={`enabled:bg-cmaccent/65 enabled:text-cmwhite enabled:ring-cmaccent ring-2 uppercase w-full p-3 text-md font-medium transition-all ease-linear duration-200 enabled:hover:ring-[#ffad99] shadow-md enabled:hover:shadow-lg enabled:hover:bg-cmaccent enabled:hover:text-cmwhite enabled:hover:cursor-pointer translate-y-2 enabled:hover:translate-y-1 ${
+            className={`enabled:bg-cmaccent/75 uppercase w-full p-3 text-md font-medium transition-all ease-linear duration-200  shadow-md enabled:hover:shadow-lg enabled:hover:bg-cmaccent  enabled:hover:cursor-pointer translate-y-2 enabled:hover:translate-y-1 ${
               isButtonDisabled ? "bg-cmdark/40 text-cmwhite/40" : ""
             }`}
             // code for handling disabled button mode
             // ---disabled={isButtonDisabled}
           >
-            <p className="text-p text-cmwhite">start dialogen</p>
+            <p className="text-[14pt] tracking-wide">start dialogen</p>
           </Button>
         </div>
       </form>
