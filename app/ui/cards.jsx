@@ -61,18 +61,18 @@ export const SimpleCardTwo = ({ content, title }) => {
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease flex-col flex-end rounded-lg pt-8 pb-2 px-8 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}
+      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease-linear flex-col flex-end rounded-lg py-2 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}
     >
       <CardBody className="relative w-full h-2/3">
         <h5
           className={`text-[1.7rem] font-medium text-cmwhite flex justify-center ${
-            isHovered ? "translate-y-0" : "translate-y-8 xl:translate-y-6"
+            isHovered ? "translate-y-0" : "translate-y-8 xl:translate-y-6 "
           } transition-all ease-linear duration-300 `}
         >
           {title}
         </h5>
         <div
-          className={`w-fit h-fit py-2 rounded-xl transition-all ease-linear duration-400 ${
+          className={`w-fit h-fit rounded-xl transition-all ease-linear duration-400 ${
             isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >

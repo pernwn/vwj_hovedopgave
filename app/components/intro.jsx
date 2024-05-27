@@ -73,7 +73,7 @@ const CircleCard = () => {
   });
 
   return (
-    <section className="pb-28 xl:pb-12">
+    <section className="pb-24 xl:pb-16">
       <USP />
       <Card
         className={`${styles.padding} relative flex items-center justify-center min-h-screen bg-transparent shadow-none`}
@@ -102,7 +102,7 @@ const CircleCard = () => {
         className="flex justify-center"
       >
         <Card
-          className={`p-6 relative shadow-lg w-2/3 h-full xl:h-[30em] xl:w-2/4 xl:p-8 xl:pb-12 xl:bottom-8 bottom-0 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
+          className={`p-6 relative shadow-lg w-[60%] h-full xl:h-[28em] xl:w-2/4 xl:p-8 xl:mb-8 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
         >
           <CardHeader floated={false}>
             <Image
@@ -110,11 +110,11 @@ const CircleCard = () => {
               objectFit="cover"
               src="/bjarke-profil.jpg"
               alt="Bjarke Petersen"
-              className="rounded-lg shadow-md flex justify-center items-center"
+              className="rounded-lg shadow-md flex"
               layout="fill"
             />
           </CardHeader>
-          <CardBody className="flex flex-col gap-4 py-4">
+          <CardBody className="flex flex-col gap-2 py-4">
             <div>
               <h3 className="text-h3">Bjarke Petersen</h3>
               <h6 className="text-h6">IT Security Entrepreneur</h6>
