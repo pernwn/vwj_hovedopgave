@@ -4,12 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import FormComp from "../ui/form"; //Import af selve kontaktformularen
 
+
+
 //Render en kontaktsektion med tekstindhold, kontaktinformation og en formular.
 //Funktionel komponent der returnerer kontakt-sektion
 const Contact = () => {
   return (
     //Sektion med baggrunds gradient defineret i tailwind.config og globals.css - 2 primære containeres: tekstboks og formular, derfor sat flex-row (vandret)
     <section
+      id="kontakt"
       className={`${styles.padding} xl:px-48 flex-row gap-20 xl:gap-16 bg-gradient-tr ${styles.flexStart} rounded-bl-[12em] rounded-tr-[12em]`}
     >
       {/* Container med tekst i flex lodret */}

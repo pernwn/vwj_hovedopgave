@@ -19,11 +19,6 @@ module.exports = {
       xl: "1700px",
     },
 
-    // fontFamily: {
-    //   josefinSans: ["Josefin Sans", "sans-serif"],
-    //   lato: ["Lato", "sans-serif"]
-    // },
-
     extend: {
       backgroundImage: {
         heroimg: "url('/heroimg.jpeg')",
@@ -72,14 +67,20 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        
         shimmer: {
           "100%": {
             transform: "translateX(100%)",
           },
         },
+        
+        
       },
     },
   },
   plugins: [],
 };
 
+
+
+        // Button co

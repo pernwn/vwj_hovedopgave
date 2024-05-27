@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import { CardBody, Card } from "@material-tailwind/react";
 
-import { ImgCard } from "../ui/cards"; // Import af ui billedekort komponent
+import { VidCard } from "../ui/cards"; // Import af ui billedekort komponent
 import Image from "next/legacy/image";
 
 //Komponent for dekorative animerede baggrundscirkler
@@ -82,12 +82,12 @@ const ExplainerCard = () => {
             </div>
             {/* Container til 2 billedkort som originalt var tænkt til videoer* (Note i cards.jsx) */}
             <div className="flex flex-col w-full h-full lg:flex-row justify-center">
-              <ImgCard
+              <VidCard
                 title="Beskyttelsestiltag"
                 content="CyberMinds beskytter din virksomhed mod cybertrusler. Vores eksperter overvåger og reagerer på sikkerhedsrisici døgnet rundt for at sikre dine data og forretningskontinuitet. Se hvordan vi gør det i denne video."
                 holderImg="/placeholder1.jpg"
               />
-              <ImgCard
+              <VidCard
                 title="Avanceret Cybersecurity"
                 content="CyberMinds tilbyder skræddersyede løsninger til at beskytte dine digitale aktiver. Med avanceret teknologi og dybdegående analyser, sikrer vi, at din virksomhed er rustet til at modstå de mest sofistikerede cyberangreb."
                 holderImg="/placeholder2.png"

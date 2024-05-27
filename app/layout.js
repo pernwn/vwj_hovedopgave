@@ -26,7 +26,7 @@ export const metadata =  {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="background--custom">
+    <html lang="en" className="background--custom" >
       <Head>
         <title>CyberMinds</title>
         <meta

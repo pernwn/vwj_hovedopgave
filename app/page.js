@@ -8,7 +8,6 @@ import Contact from './components/contact';
 import Faq from './components/faq';
 import Footer from './components/footer';
 
-
 export default function Page() {
   return (
     <ClientRender>

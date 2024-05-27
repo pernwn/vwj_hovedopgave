@@ -64,11 +64,13 @@ const BackgroundCircles = () => {
     </div>
   );
 };
+
+
+
 const CircleCard = () => {
   const [ref, inView] = useInView({
-    threshold: 0.8, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
+    threshold: 0.3, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
   });
-
 
   return (
     <section className="pb-28 xl:pb-12">
@@ -78,7 +80,7 @@ const CircleCard = () => {
       >
         <BackgroundCircles />
         <div
-          className={`${styles.padding} xl:bottom-16 relative z-10 flex flex-col items-center justify-center w-[38em] h-[38em] xl:w-[44em] xl:h-[44em] bg-cmwhite/75 shadow-lg rounded-full bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-50 border border-cmdark/5`}
+          className={`${styles.padding} xl:bottom-16 relative z-1 flex flex-col items-center justify-center w-[38em] h-[38em] xl:w-[44em] xl:h-[44em] bg-cmwhite/75 shadow-lg rounded-full bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-50 border border-cmdark/5`}
         >
           <div className="text-center">
             <h2 className="text-h2">Hvem er CyberMinds?</h2>
@@ -89,7 +91,7 @@ const CircleCard = () => {
               din virksomhed mod cyberkriminalitet og datasikkerhedsbrud.
             </p>
           </div>
-          <FilledBtn title="Kontakt" />
+          <FilledBtn title="Kontakt" url="#kontakt" />
         </div>
       </Card>
       <motion.div
@@ -100,10 +102,11 @@ const CircleCard = () => {
         className="flex justify-center"
       >
         <Card
-          className={` p-4 pb-8 relative shadow-lg w-2/3 h-full xl:h-[30em] xl:w-2/4 xl:p-8 xl:pb-12 xl:bottom-8 bottom-0 grid grid-cols-2 gap-8 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
+          className={`p-6 relative shadow-lg w-2/3 h-full xl:h-[30em] xl:w-2/4 xl:p-8 xl:pb-12 xl:bottom-8 bottom-0 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
         >
           <CardHeader floated={false}>
             <Image
+              objectPosition="top"
               objectFit="cover"
               src="/bjarke-profil.jpg"
               alt="Bjarke Petersen"
@@ -111,7 +114,7 @@ const CircleCard = () => {
               layout="fill"
             />
           </CardHeader>
-          <CardBody className="flex flex-col gap-4 py-8">
+          <CardBody className="flex flex-col gap-4 py-4">
             <div>
               <h3 className="text-h3">Bjarke Petersen</h3>
               <h6 className="text-h6">IT Security Entrepreneur</h6>
@@ -126,21 +129,7 @@ const CircleCard = () => {
               kan bedre end de fleste, hjælpe med at italesætte
               forretningsbehovet og omsætte det til løsninger.
             </p>
-            <Link href="https://www.linkedin.com/in/bjarke-n-petersen/">
-              <Button
-                size="sm"
-                className="rounded-full w-fit flex justify-between gap-4 mt-4 bg-clip-padding  text-cmwhite items-center bg-cmaccent/75 ring-cmaccent/75 ring-2 hover:bg-cmaccent hover:ring-[#ffad99] hover:cursor-pointer transition-color ease-linear  "
-              >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  size="2xl"
-                  className="object-left"
-                />
-                <p className="text-md text-current normal-case object-right">
-                  Skab forbindelse
-                </p>
-              </Button>
-            </Link>
+            <FilledBtn url='https://www.linkedin.com/in/bjarke-n-petersen/' icon={<FontAwesomeIcon icon={faLinkedin} size="xl"/>} title="skab forbindelse"/>
           </CardBody>
         </Card>
       </motion.div>

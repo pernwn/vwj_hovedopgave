@@ -28,7 +28,7 @@ const Header = () => {
       <Button
         onMouseEnter={handleHover}
         onMouseLeave={handleNotHover}
-        className="translate-y-0 hover:-translate-y-1 active:-translate-y-2 hover:cursor-pointer my-2.5 w-[16rem] shadow-md  bg-cmaccent rounded-full border-solid border-cmaccent border-2 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-sm hover:bg-cmprimary hover:bg-opacity-40 hover:border-cmprimary transition ease-linear duration-300"
+        className="translate-y-0 hover:-translate-y-1 active:-translate-y-2 hover:cursor-pointer h-fit w-[16rem] shadow-md  bg-cmaccent rounded-full border-solid border-cmaccent border-2 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-sm hover:bg-cmprimary hover:bg-opacity-40 hover:border-cmprimary transition ease-linear duration-300"
       >
         {/* Ternary operator (conditional) der tjekker om musen er over knappen eller ej. Hvis den ikke er viser knappen default, hvis den er viser knappen hover-state */}
         {isHovering ? (

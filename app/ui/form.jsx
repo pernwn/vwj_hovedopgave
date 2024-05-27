@@ -6,14 +6,9 @@ import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 import { Checkbox, FormControlLabel, styled } from "@mui/material";
 import styles from "../style";
+import Link from "next/link";
 
-
-import {
-  Card,
-  Dialog,
-  DialogFooter,
-  Button,
-} from "@material-tailwind/react";
+import { Card, Dialog, DialogFooter, Button } from "@material-tailwind/react";
 
 //Checkbox importeret fra Material UI hvor tailwindcss ikke kan ændre styling
 const CustomCheckbox = styled(Checkbox)(({ error }) => ({
@@ -26,10 +21,10 @@ const CustomCheckbox = styled(Checkbox)(({ error }) => ({
 //Kontaktformular med brugerinteraktion
 export default function FormComp() {
   // useState Hooks til at håndtere tilstanden af dialogvinduet, deaktiveret knap, formværdier og fejlmeddelelser
-  
+
   const [open, setOpen] = useState(false); // Holder styr på om dialog elementet er åbent eller ej
   const handleOpen = () => setOpen(!open); // Skifter værdien af open for at lukke eller åbne dialog element
-  
+
   //Formværdier
   const [formValues, setFormValues] = useState({
     firstName: "",
@@ -49,7 +44,7 @@ export default function FormComp() {
     check: false,
   });
 
-   // handleChange-funktionen håndterer ændringer i inputfelterne og validerer e-mail-format - opdaterer formvalues tilstand med de nye værdier
+  // handleChange-funktionen håndterer ændringer i inputfelterne og validerer e-mail-format - opdaterer formvalues tilstand med de nye værdier
   const handleChange = (e) => {
     const { id, value, type, checked } = e.target;
     const newValue = type === "checkbox" ? checked : value;
@@ -62,13 +57,13 @@ export default function FormComp() {
     }
   };
 
-    // validateEmail-funktionen bruges til at validere e-mail-adresser ved hjælp af en regelmæssig udtrykning
+  // validateEmail-funktionen bruges til at validere e-mail-adresser ved hjælp af en regelmæssig udtrykning
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-    // handleSubmit-funktionen håndterer formularen, når den sendes - validerer alle felter
+  // handleSubmit-funktionen håndterer formularen, når den sendes - validerer alle felter
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {
@@ -280,7 +275,7 @@ export default function FormComp() {
       {/* Dialog Component */}
       <div className={`w-fit h-fit ${styles.padding} ${styles.flexCenter}`}>
         <Dialog
-          className="bg-cmwhite/80 text-center h-fit w-fit mx-[35vw] my-[25vh] px-12 py-8 gap-2 flex flex-col items-center justify-center"
+          className="bg-cmwhite/80 text-center h-fit w-fit mx-[32vw] my-[25vh] px-12 py-8 gap-2 flex flex-col items-center justify-center"
           open={open}
           handler={handleOpen}
           animate={{
@@ -289,25 +284,30 @@ export default function FormComp() {
           }}
         >
           <h3 className="text-h3">Tak for din henvendelse</h3>
-          <div className="space-y-2">
+          <div className="space-y-2 px-12">
             <p className="text-p">
               Vi har modtaget din besked og arbejder på at svare dig så hurtigt
               som muligt.
             </p>
             <p className="text-p">
               Hvis du har yderligere spørgsmål eller bekymringer, tøv ikke med
-              at kontakte os igen. Vi er her for at hjælpe dig.
+              at kontakte os igen. <br/> Vi er her for at hjælpe dig.
             </p>
           </div>
 
-          <DialogFooter>
+          <DialogFooter className="flex items-center space-x-4">
             <Button
-              variant="gradient"
               onClick={handleOpen}
-              className="text-p text-cmwhite bg-cmprimary hover:bg-[#001966] transition ease-linear duration-300"
+              className="text-p hover:text-cmprimary hover:bg-cmprimary/10 shadow-none hover:shadow-sm text-cmprimary bg-transparent transition ease-linear duration-300"
             >
-              <span>OK</span>
+              <span>Bekræft</span>
             </Button>
+
+            <Link href="https://www.linkedin.com/in/bjarke-n-petersen/">
+              <Button className="text-p w-full bg-cmprimary hover:bg-[#0C00CD] shadow-none hover:shadow-lg text-cmwhite transition ease-linear duration-300">
+                <span>LinkedIn</span>
+              </Button>
+            </Link>
           </DialogFooter>
         </Dialog>
       </div>

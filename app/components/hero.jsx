@@ -7,6 +7,7 @@ import styles from "../style";
 import { Button } from "@material-tailwind/react";
 import CyberPartners from "../ui/basicSlider";
 import Header from "./header";
+import Link from "next/link";
 
 const Hero = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -19,7 +20,7 @@ const Hero = () => {
       className={`bg-no-repeat bg-center bg-heroimg h-full w-full bg-cover`}
     >
       {/* Container til at dække billedet med mørk overlay og blur-effekt */}
-      <div className="bg-cmdark/60 bg-clip-padding backdrop-filter backdrop-blur-xl">
+      <div className="bg-cmdark/60 bg-clip-padding backdrop-filter backdrop-blur-xl h-fit">
         <div className={`${styles.padding} h-full w-full `}>
           <Header />
           {/* Hero sektionens tekst */}
@@ -33,6 +34,7 @@ const Hero = () => {
             </h4>
     
             {/* CTA */}
+            <Link href="#kontakt">
             <Button
               onMouseEnter={hovering}
               onMouseLeave={notHovering}
@@ -46,7 +48,8 @@ const Hero = () => {
                   //Hvis ikke hover vis dette
                 <p className="text-cmwhite text-p">Kontakt os</p>
               )}
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
         {/* Dekorativ slider over samarbejdspartnere */}

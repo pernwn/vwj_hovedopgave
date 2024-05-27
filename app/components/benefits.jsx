@@ -49,7 +49,7 @@ const Benefits = () => {
             title="Effektive match"
           />
         </div>
-        <FilledBtn title="Book en samtale" />
+        <FilledBtn title="Book en samtale" url="#kontakt" />
       </div>
 
     
