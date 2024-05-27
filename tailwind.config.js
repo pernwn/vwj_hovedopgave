@@ -33,7 +33,7 @@ module.exports = {
         cmwhite: "#f5f5f5",
         cmprimary: "#003cee",
         cmsecondary: "#86bae2",
-        cmaccent: "#ff7857",
+        cmaccent: "#ff7755",
         current: "currentColor",
       },
 
