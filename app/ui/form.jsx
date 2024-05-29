@@ -97,9 +97,9 @@ export default function FormComp() {
 
   return (
     <Card shadow={false} className="bg-transparent text-cmwhite">
-      <form className="w-full max-w-xl xl:w-full " onSubmit={handleSubmit}>
+      <form className="w-full max-w-xl" onSubmit={handleSubmit}>
         <div className="flex flex-wrap -mx-3 mb-4">
-          <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+          <div className="w-full md:w-1/2 px-3 md:mb-3">
             <label
               className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
               htmlFor="firstName"
