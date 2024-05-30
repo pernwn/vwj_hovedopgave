@@ -27,10 +27,6 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 h1,
 h2,
 h3 {
@@ -59,8 +55,8 @@ button p {
   font-family: var(--font-lato);
   color: var(--primary-600);
   font-weight: 500;
-  letter-spacing:0.8% ;
-  font-size:1.333rem;
+  letter-spacing:0.9% ;
+  font-size:1.7em;
 }
 
 gradient-tr{

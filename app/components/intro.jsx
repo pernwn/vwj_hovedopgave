@@ -91,7 +91,7 @@ const CircleCard = () => {
               din virksomhed mod cyberkriminalitet og datasikkerhedsbrud.
             </p>
           </div>
-          <FilledBtn title="Kontakt" url="#kontakt" />
+          <FilledBtn title="Øg din sikkerhed" url="#kontakt" />
         </div>
       </Card>
       <motion.div
@@ -129,7 +129,7 @@ const CircleCard = () => {
               kan bedre end de fleste, hjælpe med at italesætte
               forretningsbehovet og omsætte det til løsninger.
             </p>
-            <FilledBtn url='https://www.linkedin.com/in/bjarke-n-petersen/' icon={<FontAwesomeIcon icon={faLinkedin} size="xl"/>} title="skab forbindelse"/>
+            <FilledBtn url='https://www.linkedin.com/in/bjarke-n-petersen/' icon={<FontAwesomeIcon icon={faLinkedin} size="xl"/>} title="Skab forbindelse"/>
           </CardBody>
         </Card>
       </motion.div>
