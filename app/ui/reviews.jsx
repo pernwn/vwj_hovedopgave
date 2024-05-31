@@ -135,17 +135,23 @@ export const ReviewComp = () => {
   const duplicateSlides = [...reviews, ...reviews]; // Duplikerer anmeldelserne for at simulere en uendelig karusel
   const [currentSlide, setCurrentSlide] = useState(0); // Holder styr på det aktuelle slide
 
-  // Funktion der håndterer navigering af karusellen
-  const handleNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % reviews.length); //Øger 'currentslide' med 1, og hvis den når enden af starten. Modulo operator (%) dividerer prevSlide + 1 med længden af arrayet for at fastlægge den aktuelle placering og går tilbage til start hvis man når enden
-  };
+// Funktion der håndterer navigation til næste slide
+const handleNextSlide = () => {
+    if (currentSlide < reviews.length - 1) {
+      // Hvis 'currentSlide' ikke er ved slutningen af arrayet, øges den med 1
+      setCurrentSlide(currentSlide + 1);
+    } else {
+      // Hvis 'currentSlide' er ved slutningen af arrayet, går den tilbage til starten
+      setCurrentSlide(0);
+    }
+};
 
-  // Mindsker 'currentslide' med 1
-  const handlePrevSlide = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + reviews.length) % reviews.length
-    );
-  };
+// Funktion der håndterer navigation til forrige slide
+const handlePrevSlide = () => {
+setCurrentSlide(
+  (prevSlide) => (prevSlide - 1 + reviews.length) % reviews.length
+);
+};
 
   return (
     <div className="relative overflow-hidden">
@@ -153,20 +159,19 @@ export const ReviewComp = () => {
         <motion.div
           className="flex"
           animate={{
-            x: `-${currentSlide * 10}%`, // Animerer karusellen til det aktuelle slide
+            x: `-${currentSlide * 10}%`,
           }}
           transition={{
             ease: "linear",
             duration: 0.4,
           }}
-          style={{ width: `${reviews.length * 100}%` }}
         >
           {/* Mapper gennem anmeldelser og opretter et slide for hver */}
           {duplicateSlides.map((review, index) => (
             <div
               key={index}
               className="flex-shrink-0"
-              style={{ width: `${100 / reviews.length}%` }}
+              style={{ width: `${110 / reviews.length}%` }}
             >
               {/* Viser en enkelt anmeldelse på et anmeldelses kort lavet i cards.jsx med props */}
               <ReviewCard
@@ -197,7 +202,9 @@ export const ReviewComp = () => {
           <div
             key={index}
             className={`w-2 h-2 rounded-full cursor-pointer ${
-              index === currentSlide ? "bg-cmaccent" : "bg-cmsecondary/40"
+              index === currentSlide
+                ? "bg-cmaccent"
+                : "bg-cmsecondary/40"
             }`}
             onClick={() => setCurrentSlide(index)} // Ved klik på en af dutterne går den til det bestemte slide
           />

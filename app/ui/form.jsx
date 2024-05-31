@@ -101,7 +101,7 @@ export default function FormComp() {
         <div className="flex flex-wrap -mx-3 mb-4">
           <div className="w-full md:w-1/2 px-3 md:mb-3">
             <label
-              className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
+              className="block normal-case tracking-wide text-cmwhite text-h5 font-medium mb-2"
               htmlFor="firstName"
             >
               Fornavn&#x2a;
@@ -128,7 +128,7 @@ export default function FormComp() {
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label
-              className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
+              className="block normal-case tracking-wide text-cmwhite text-h5 font-medium mb-2"
               htmlFor="lastName"
             >
               Efternavn&#x2a;
@@ -157,7 +157,7 @@ export default function FormComp() {
         <div className="flex flex-wrap -mx-3 mb-4">
           <div className="w-full px-3">
             <label
-              className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
+              className="block normal-case tracking-wide text-cmwhite text-h5 font-medium mb-2"
               htmlFor="contact"
             >
               Email&#x2a;
@@ -197,7 +197,7 @@ export default function FormComp() {
         <div className="flex flex-wrap -mx-3 mb-4">
           <div className="w-full px-4 py-3">
             <label
-              className="block uppercase tracking-wide text-cmwhite text-h6 font-bold mb-2"
+              className="block normal-case tracking-wide text-cmwhite text-h5 font-medium mb-2"
               htmlFor="message"
             >
               Beskriv hvordan vi kan hjælpe dig&#x2a;
@@ -261,7 +261,7 @@ export default function FormComp() {
           <Button
             type="submit"
             variant="filled"
-            className={`enabled:bg-cmaccent/75 uppercase w-full p-3 text-md font-medium transition-all ease-linear duration-200  shadow-md enabled:hover:shadow-lg enabled:hover:bg-cmaccent  enabled:hover:cursor-pointer translate-y-2 enabled:hover:translate-y-1 ${
+            className={`enabled:bg-cmaccent/75 normal-case w-full p-3 text-md font-medium tr5nsitiomediuml ease-linear duration-200  shadow-md enabled:hover:shadow-lg enabled:hover:bg-cmaccent  enabled:hover:cursor-pointer translate-y-2 enabled:hover:translate-y-1 ${
               isButtonDisabled ? "bg-cmdark/40 text-cmwhite/40" : ""
             }`}
             // code for handling disabled button mode

@@ -25,10 +25,10 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
         zIndex: 1,
         transition: { duration: 0.4 },
       }}
-      className="p-2 space-x-8 max-w-[22rem] min-h-[28rem] rounded-lg shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-4 border-cmsecondary"
+      className="p-1 max-w-[22em] min-h-[28em] rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75"
     >
       <CardBody>
-        <div className="flex flex-row pb-8 w-full h-full space-x-4">
+        <div className="flex flex-row pb-4 w-full h-full space-x-4">
           <div className="px-2 rounded-full">
             <Image
               src={avatarImg}
@@ -44,8 +44,8 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
             <Rating rating={stars} />
           </div>
         </div>
-        <Divider className="bg-cmsecondary" />
-        <div className="p-2 overflow-y-auto">
+        <Divider className="bg-cmsecondary/40" />
+        <div className="px-2 py-4 overflow-y-auto">
           <p className="text-p text-pretty text-cmwhite font-300">{review}</p>
         </div>
       </CardBody>

@@ -41,48 +41,48 @@ export function UspSkeleton() {
     <div key={index} className={`rounded-full w-24 h-24 bg-gray-300`} />
   ));
 
-  return <div className="flex flex-row justify-evenly h-fit pb-24">{divs}</div>;
+  return <div className="flex flex-row justify-evenly h-fit py-12">{divs}</div>;
 }
 
-export function IntroSkeleton() {
-  return (
-    <div className={`${styles.paddingY} h-fit w-full`}>
-      <UspSkeleton />
-      <div className={`relative flex items-center justify-center h-fit`}>
-        <BackgroundCircles />
-        <div
-          className={`${shimmer} relative z-5 flex items-center justify-center rounded-full w-[38rem] h-[38em] bg-gray-200 shadow-none`}
-        />
-      </div>
-      <div className={`${shimmer} w-full h-[400px] mt-16 bg-gray-300 flex items-center justify-center`}/>
-    </div>
-  );
-}
+// export function IntroSkeleton() {
+//   return (
+//     <div className={`${styles.paddingY} h-fit w-full`}>
+//       <UspSkeleton />
+//       <div className={`relative flex items-center justify-center h-fit`}>
+//         <BackgroundCircles />
+//         <div
+//           className={`${shimmer} relative z-5 flex items-center justify-center rounded-full w-[38rem] h-[38em] bg-gray-200 shadow-none`}
+//         />
+//       </div>
+//       <div className={`${shimmer} w-full h-[400px] mt-16 bg-gray-300 flex items-center justify-center`}/>
+//     </div>
+//   );
+// }
 
-const BackgroundCircles = () => {
-  return (
-    <div className={`${shimmer} absolute inset-0 `}>
-      <div
-        className="w-[28em] h-[28em] bg-gray-300 rounded-full absolute"
-        style={{ top: "2%", left: "8%" }}
-      />
-      <div
-        className="w-[18em] h-[18em] bg-gray-300 rounded-full absolute"
-        style={{ top: "50%", left: "22%" }}
-      />
-      <div
-        className="w-[24em] h-[24em] bg-gray-300 rounded-full absolute"
-        style={{ top: "34%", right: "8%" }}
-      />
-    </div>
-  );
-};
+// const BackgroundCircles = () => {
+//   return (
+//     <div className={`${shimmer} absolute inset-0 `}>
+//       <div
+//         className="w-[28em] h-[28em] bg-gray-300 rounded-full absolute"
+//         style={{ top: "2%", left: "8%" }}
+//       />
+//       <div
+//         className="w-[18em] h-[18em] bg-gray-300 rounded-full absolute"
+//         style={{ top: "50%", left: "22%" }}
+//       />
+//       <div
+//         className="w-[24em] h-[24em] bg-gray-300 rounded-full absolute"
+//         style={{ top: "34%", right: "8%" }}
+//       />
+//     </div>
+//   );
+// };
 
 export default function LandingSkeleton() {
   return (
     <div className="h-fit">
       <HeroSkeleton />
-      <IntroSkeleton />
+      <UspSkeleton />
     </div>
   );
 }

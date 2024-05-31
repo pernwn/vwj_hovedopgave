@@ -22,7 +22,7 @@ const Benefits = () => {
   return (
     // Sektion med gradient baggrund defineret i tailwind.config og globals css - Responsivt til skærme over 1700px
     <section
-      className={`bg-gradient-bl ${styles.padding} space-y-12 xl:space-y-28 w-full h-full rounded-tl-[12em] rounded-br-[12em]`}
+      className={`bg-gradient-bl ${styles.padding} space-y-24 xl:space-y-28 w-full h-full rounded-tl-[12em] rounded-br-[12em]`}
     >
       {/* Services */}
       <div className={`flex-col ${styles.flexCenter} pb-12 pt-4 px-8 w-full h-auto`}>
