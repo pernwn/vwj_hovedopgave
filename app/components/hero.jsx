@@ -28,7 +28,7 @@ const Hero = () => {
             <h1 className={`text-2xl text-cmwhite`}>
               Cybersikkerhed til <i>dine</i> behov
             </h1>
-            <h4 className="text-cmwhite text-h3 xl:w-1/2">
+            <h4 className="text-cmwhite text-h3 w-3/4 xl:w-1/2">
               CyberMinds er et IT-sikkerheds freelancehus, hvor vi stiller
               Danmarks bedste IT-sikkerhedseksperter til rådighed for dig.
             </h4>
