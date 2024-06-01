@@ -1,26 +1,22 @@
-import React from "react";
-import styles from "../style";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain, faPeopleArrows, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+
 
 // USP'er i flexbox med ikon og tekst
-const USP = () => {
-  return (
-    <div className={`flex flex-row justify-evenly text-h4 py-16 text-cmaccent`}>
-      <div className="flex flex-col space-y-4">
-        <FontAwesomeIcon icon={faShieldHalved} size="2xl"/>
-        <h4 className="text-cmaccent text-h3 font-normal">Nichespecialister</h4>
-      </div>
-      <div className="flex flex-col space-y-4">
-        <FontAwesomeIcon icon={faBrain} size="2xl"/>
-        <h4 className="text-cmaccent text-h3 font-normal">Dybdegående forståelse</h4>
-      </div>
-      <div className="flex flex-col space-y-4">
-        <FontAwesomeIcon icon={faPeopleArrows} size="2xl"/>
-        <h4 className="text-cmaccent text-h3 font-normal">Bedre match</h4>
-      </div>
-    </div>
-  );
+const USP = ({icon,text}) => {
+   const [isHovered, setIsHovered] = useState(false);
+   return (
+     <div
+       onMouseEnter={() => setIsHovered(true)}
+       onMouseLeave={() => setIsHovered(false)}
+       className={`flex flex-col space-y-4  p-4 w-full text-center ${
+         isHovered ? "translate-y-0" : "translate-y-4"
+       } transition ease-linear duration-400`}
+     >
+       <FontAwesomeIcon icon={icon} size="2xl" />
+       <h4 className="text-cmaccent text-h3 font-normal">{text}</h4>
+     </div>
+   );
 };
 
 export default USP;

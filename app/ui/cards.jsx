@@ -54,29 +54,29 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
 };
 
 //Simpelt kort med hover
-export const SimpleCardTwo = ({ content, title }) => {
+export const SimpleCardTwo = ({ content, title, icon }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${styles.flexCenter} w-full h-fit overflow-hidden hover:cursor-pointer hover:bg-cmprimary/15 hover:ring-2 hover:ring-cmprimary transition ease-linear flex-col flex-end rounded-lg py-2 shadow-xl bg-cmsecondary bg-blend-soft-light bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-25`}
+      className={`${styles.flexCenter}  w-full min-h-[16rem] max-h-[18rem] overflow-hidden hover:bg-cmprimary/50 ring-2 ring-cmsecondary/10 hover:ring-cmprimary transition ease-linear rounded-lg shadow-lg bg-cmsecondary/5`}
     >
-      <CardBody className="relative w-full h-2/3">
+      <CardBody className="relative group space-y-2">
         <h5
-          className={`text-[1.7rem] font-medium text-cmwhite flex justify-center ${
-            isHovered ? "translate-y-0" : "translate-y-8 xl:translate-y-6 "
+          className={`text-[1.7rem] font-medium text-cmsecondary mix-blend-screen group-hover:text-cmwhite flex flex-col gap-2 items-center justify-center ${
+            isHovered ? "translate-y-0" : "translate-y-12 xl:translate-y-6 "
           } transition-all ease-linear duration-300 `}
         >
-          {title}
+          {icon} {title}
         </h5>
         <div
           className={`w-fit h-fit rounded-xl transition-all ease-linear duration-400 ${
-            isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            isHovered ? "opacity-1 translate-y-0" : "opacity-0 translate-y-2"
           }`}
         >
-          <p className="text-[1.1rem] leading-tight w-fit text-white/75">
+          <p className="text-[1.1rem] text-center font-normal leading-tight text-white/70">
             {content}
           </p>
         </div>
@@ -130,7 +130,7 @@ export const VidCard = ({ title, content, holderImg }) => {
           layout="fill"
           objectFit="cover"
           alt="Placeholder image"
-          className=""
+
         />
         {/* 
         Ved hvert klik ændrer værdien af isPlay fra true til false og omvendt ved hjælp af setisPlay(!isPlay). 

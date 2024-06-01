@@ -21,7 +21,7 @@ module.exports = {
 
     extend: {
       backgroundImage: {
-        heroimg: "url('/heroimg.jpeg')",
+        heroimg: "url('/heroimg.webp')",
         "gradient-tr":
           "linear-gradient(to top right, #003cee, #002699, #001966)",
         "gradient-bl":

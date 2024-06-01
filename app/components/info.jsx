@@ -35,7 +35,7 @@ const BackgroundCircles = () => {
         animate={inView ? "animate" : "hidden"} //Aktiverer animationen når elementet er synligt ellers er den hidden
       >
         <Image
-          src="/developer.png"
+          src="/developer.webp"
           alt="Developer"
           className="rounded-full"
           layout="fill"
@@ -85,12 +85,12 @@ const ExplainerCard = () => {
               <VidCard
                 title="Beskyttelsestiltag"
                 content="CyberMinds beskytter din virksomhed mod cybertrusler. Vores eksperter overvåger og reagerer på sikkerhedsrisici døgnet rundt for at sikre dine data og forretningskontinuitet. Se hvordan vi gør det i denne video."
-                holderImg="/placeholder1.jpg"
+                holderImg="/placeholder1.webp"
               />
               <VidCard
                 title="Avanceret Cybersecurity"
                 content="CyberMinds tilbyder skræddersyede løsninger til at beskytte dine digitale aktiver. Med avanceret teknologi og dybdegående analyser, sikrer vi, at din virksomhed er rustet til at modstå de mest sofistikerede cyberangreb."
-                holderImg="/placeholder2.png"
+                holderImg="/placeholder2.webp"
               />
             </div>
           </div>

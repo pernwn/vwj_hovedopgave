@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     // Baggrundsbillede der dækker hele sektionen
     <section
-      className={`bg-no-repeat bg-center bg-heroimg h-full w-full bg-cover`}
+      className={`bg-no-repeat bg-center bg-heroimg h-full w-full bg-cover bg-fixed`}
     >
       {/* Container til at dække billedet med mørk overlay og blur-effekt */}
       <div className="bg-cmdark/60 bg-clip-padding backdrop-filter backdrop-blur-xl h-fit">

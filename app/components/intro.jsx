@@ -14,6 +14,11 @@ import USP from "../ui/usp";
 import { FilledBtn } from "../ui/buttons";
 import Image from "next/legacy/image";
 import { useInView } from "react-intersection-observer";
+import {
+  faBrain,
+  faPeopleArrows,
+  faShieldHalved,
+} from "@fortawesome/free-solid-svg-icons";
 
 const circles = {
   initial: { opacity: 0, y: 50 },
@@ -40,7 +45,7 @@ const BackgroundCircles = () => {
         animate={inView ? "animate" : "hidden"} //Aktiverer animationen hvis den er inview
       >
         <Image
-          src="/roundbuilding.jpg"
+          src="/roundbuilding.webp"
           alt="Decorative Circle 3"
           className="rounded-full"
           layout="fill"
@@ -74,7 +79,11 @@ const CircleCard = () => {
 
   return (
     <section className="pb-24 xl:pb-16">
-      <USP />
+      <div className={`flex flex-row justify-around text-h4 py-12 text-cmaccent`}>
+      <USP icon={faShieldHalved} text="Nichespecialister" />
+      <USP icon={faBrain} text="Dybdeindsigt" />
+      <USP icon={faPeopleArrows} text="Bedre match" />
+    </div>
       <Card
         className={`${styles.padding} relative flex items-center justify-center min-h-screen bg-transparent shadow-none`}
       >
@@ -108,7 +117,7 @@ const CircleCard = () => {
             <Image
               objectPosition="top"
               objectFit="cover"
-              src="/bjarke-profil.jpg"
+              src="/bjarke-profil.webp"
               alt="Bjarke Petersen"
               className="rounded-lg shadow-md flex"
               layout="fill"
