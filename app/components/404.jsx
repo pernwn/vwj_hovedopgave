@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+//hurtigt forsøg på en 404
 export default function Custom404() {
   return (
     <div className="flex items-center justify-center w-screen h-screen bg-gray-100">
