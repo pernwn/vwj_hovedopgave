@@ -171,7 +171,7 @@ setCurrentSlide(
             <div
               key={index}
               className="flex-shrink-0"
-              style={{ width: `${110 / reviews.length}%` }}
+              style={{ width: `${100 / reviews.length}%` }}
             >
               {/* Viser en enkelt anmeldelse på et anmeldelses kort lavet i cards.jsx med props */}
               <ReviewCard

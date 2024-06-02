@@ -26,6 +26,8 @@ module.exports = {
           "linear-gradient(to top right, #003cee, #002699, #001966)",
         "gradient-bl":
           "linear-gradient(to bottom left,#003cee, #002699, #001966)",
+          "gradient-t":
+          "linear-gradient(to top, #f5f5f5)"
       },
 
       colors: {
@@ -48,9 +50,7 @@ module.exports = {
         '2xl':"5rem"
       },
 
-      dropShadow: {
-        sm: "4px 12px 12px #021C30",
-      },
+     
 
       boxShadow: {
         "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",

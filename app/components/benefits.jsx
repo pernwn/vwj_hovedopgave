@@ -4,7 +4,7 @@ import React from "react";
 
 //Import af UI komponenter
 import { SimpleCardTwo } from "../ui/cards";
-import { FilledBtn } from "../ui/buttons";
+import { Primary } from "../ui/buttons";
 import { ReviewComp } from "../ui/reviews";
 import styles from "../style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -64,7 +64,7 @@ const Benefits = () => {
             icon={<FontAwesomeIcon icon={faHandshakeAngle} size="xl" />}
           />
         </div>
-        <FilledBtn title="Book en samtale" url="#kontakt" />
+        <Primary title="Book en samtale" url="#kontakt" />
       </div>
 
       {/* Testimonials / social proof */}

@@ -24,10 +24,10 @@ const Icon = ({ open }) => {
 
 const Accordion = ({ header, sub, body, isOpen, onClick }) => {
   return (
-    <div className="mb-4 rounded-lg shadow-md border border-cmdark/5 p-4 px-8">
+    <div className="mb-4 rounded-lg shadow-md border border-cmdark/5 p-4 px-6">
       <div
         className={`flex items-center justify-between cursor-pointer ${
-          isOpen ? "bg-cmdark/5 w-full p-2 rounded-md" : "" // Baggrundsfarve tilføjes, hvis menuen er åben
+          isOpen ? "bg-cmdark/5 w-full p-2 py-4 rounded-md" : "" // Baggrundsfarve tilføjes, hvis menuen er åben
         } transition-colors`}
         onClick={onClick}
       >

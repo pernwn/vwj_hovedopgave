@@ -9,7 +9,7 @@ const USP = ({icon,text}) => {
      <div
        onMouseEnter={() => setIsHovered(true)}
        onMouseLeave={() => setIsHovered(false)}
-       className={`flex flex-col space-y-4  p-4 w-full text-center ${
+       className={`flex flex-col space-y-4 bg-gradient-t p-4 w-full text-center ${
          isHovered ? "translate-y-0" : "translate-y-4"
        } transition ease-linear duration-400`}
      >

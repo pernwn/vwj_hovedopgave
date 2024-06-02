@@ -38,7 +38,7 @@ const Hero = () => {
             <Button
               onMouseEnter={hovering}
               onMouseLeave={notHovering}
-              className={`w-[20rem] flex items-center justify-center translate-y-4 hover:translate-y-3 rounded-full border-2 border-cmaccent hover:font-medium cursor-pointer py-4 px-8 bg-cmaccent/25 hover:bg-cmaccent active:translate-y-2 transition duration-300 ease-linear transform`}
+              className={`w-[20rem] flex items-center justify-center translate-y-4 hover:translate-y-3 rounded-full border-2 border-cmaccent hover:font-medium cursor-pointer py-4 px-8 bg-cmaccent/40 hover:bg-clip-padding hover:backdrop-filter hover:backdrop-blur-sm hover:bg-cmprimary hover:bg-opacity-40 hover:border-cmprimary transition ease-linear duration-300`}
             >
               {/* Ternary operator (conditional) */}
               {isHovering ? (

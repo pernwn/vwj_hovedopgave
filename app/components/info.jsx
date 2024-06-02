@@ -20,13 +20,13 @@ const BackgroundCircles = () => {
   const circles = {
     initial: { opacity: 0, y: 50 }, // Cirkel synlighed og startposition
     animate: { opacity: 1, y: 0, transition: { duration: 2 } }, //Animations egenskaber
-    hidden: {opacity:0, y:50, transition:{duration: 2} }, // Når cirkelerne er ude af syne
+    hidden: {opacity:0, y:40, transition:{duration: 1} }, // Når cirkelerne er ude af syne
   };
 
   return (
     //Cirkler i forskellige størrelser
     <div className="absolute inset-0">
-    {/* Cirkel med tyk kant og billede */}
+      {/* Cirkel med tyk kant og billede */}
       <motion.div
         ref={ref}
         className="w-[48em] h-[48em] border-[1.8rem] border-cmaccent rounded-full absolute bottom-[10%] left-[-18%] xl:left-[12%]"
@@ -66,30 +66,30 @@ const ExplainerCard = () => {
     <section className={`${styles.flexCenter} relative my-24`}>
       <BackgroundCircles />
       <Card
-        className={`${styles.flexCenter} py-8 overflow-hidden w-3/5 xl:w-2/5 relative rounded-2xl shadow-lg bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-75 border border-cmdark/5 bg-cmwhite`}
+        className={`${styles.flexCenter} py-8 overflow-hidden w-2/3 xl:w-2/5 relative rounded-2xl shadow-sm bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-65 border border-cmdark/5 bg-cmwhite`}
       >
         {/* Tekstcontainer */}
         <CardBody className="flex flex-row items-center justify-center w-fit h-full">
-          <div className="text-center w-full flex flex-col items-center justify-center space-y-2 px-12 xl:px-8">
-            <div>
-            <h2 className="text-h2">Din sikkerhed, vores ansvar</h2>
-            <p className="text-p mx-12 xl:mx-24">
-              Få et indblik i, hvordan vi prioriterer <b>kvalitet</b>,{" "}
-              <b>pålidelighed</b> og <b>effektivitet</b> i alle vores
-              handlinger. Se her, hvordan vores dedikation til disse værdier
-              former hver interaktion og beslutning, vi træffer.
+          <div className=" w-full flex flex-col items-center justify-center space-y-8 px-16 xl:px-12">
+            <div className="text-center">
+              <h2 className="text-h2">Din sikkerhed, vores ansvar</h2>
+              <p className="text-p mx-12 xl:mx-24">
+                Få et indblik i, hvordan vi prioriterer <b>kvalitet</b>,
+                <b>pålidelighed</b> og <b>effektivitet</b> i alle vores
+                handlinger. Se her, hvordan vores dedikation til disse værdier
+                former hver interaktion og beslutning, vi træffer.
               </p>
             </div>
             {/* Container til 2 billedkort som originalt var tænkt til videoer* (Note i cards.jsx) */}
             <div className="flex flex-col w-full h-full lg:flex-row justify-center">
               <VidCard
                 title="Beskyttelsestiltag"
-                content="CyberMinds beskytter din virksomhed mod cybertrusler. Vores eksperter overvåger og reagerer på sikkerhedsrisici døgnet rundt for at sikre dine data og forretningskontinuitet. Se hvordan vi gør det i denne video."
+                content="Vores eksperter overvåger og reagerer på sikkerhedsrisici døgnet rundt for at sikre dine data og forretningskontinuitet."
                 holderImg="/placeholder1.webp"
               />
-              <VidCard
+              <VidCard  
                 title="Avanceret Cybersecurity"
-                content="CyberMinds tilbyder skræddersyede løsninger til at beskytte dine digitale aktiver. Med avanceret teknologi og dybdegående analyser, sikrer vi, at din virksomhed er rustet til at modstå de mest sofistikerede cyberangreb."
+                content="Vi anvender en række avancerede teknologier og metoder for at sikre, at din virksomhed er rustet til at modstå cyberangreb."
                 holderImg="/placeholder2.webp"
               />
             </div>

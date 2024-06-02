@@ -5,7 +5,7 @@ import { Button, IconButton } from "@material-tailwind/react";
 
 // Genbrugelige button components med props - lærte at lave med destructuring under mit praktikforløb hos CyberMinds
 
-export const FilledBtn = (props) => {
+export const Primary = (props) => {
   const { title, url, icon } = props;
 
   // Tjekker om URL'en er ekstern
@@ -45,13 +45,13 @@ export const FilledBtn = (props) => {
 };
 
 
-export const OutlinedBtn = (props) => {
-  const { title, url, icon } = props;
+export const Secondary = (props) => {
+  const { title, url } = props;
   return (
-    <Link href={url}>
-      <Button className="flex items-center text-base translate-y-0 hover:-translate-y-1 active:-translate-y-2 gap-4 m-4 font-normal tracking-normal hover:font-medium hover:bg-cmaccent rounded-xl border-solid border-cmaccent border-2 bg-clip-padding backdrop-filter backdrop-blur-sm hover:text-cmwhite transition ease-linear duration-100">
-        <p className="text-p flex">
-          {icon} {title}
+    <Link href={url} className="w-full">
+      <Button className="flex p-4 group cursor-pointer items-center justify-center w-full bg-cmprimary/30 shadow-sm hover:bg-cmprimary rounded-lg transition ease-linear duration-200">
+        <p className="text-p normal-case flex text-cmprimary group-hover:text-cmwhite">
+        {title}
         </p>
       </Button>
     </Link>

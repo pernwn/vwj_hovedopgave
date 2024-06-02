@@ -11,7 +11,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 import USP from "../ui/usp";
-import { FilledBtn } from "../ui/buttons";
+import { Primary } from "../ui/buttons";
 import Image from "next/legacy/image";
 import { useInView } from "react-intersection-observer";
 import {
@@ -23,16 +23,15 @@ import {
 const circles = {
   initial: { opacity: 0, y: 50 },
   animate: { opacity: 1, y: 0, transition: { duration: 2 } },
-  hidden: { opacity: 0, y: 50, transition: { duration: 2 } },
+  hidden: { opacity: 0, y: 40, transition: { duration: 1 } },
 };
 
 //Samme cirkler/animation som i info.jsx, blot med andre størrelser - BackgroundCircles kan laves til sin egen komponent for at implementerer på tværs af hjemmesiden hvis CyberMinds ønsker flere undersider
 const BackgroundCircles = () => {
-//Anvender useInView hook for at tjekke om elmentet er indenfor viewport 
+  //Anvender useInView hook for at tjekke om elmentet er indenfor viewport
   const [ref, inView] = useInView({
-    threshold: 0.2, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
+    threshold: 0.4, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
   });
-
 
   return (
     //Cirkler i forskellige størrelser
@@ -70,28 +69,28 @@ const BackgroundCircles = () => {
   );
 };
 
-
-
 const CircleCard = () => {
   const [ref, inView] = useInView({
-    threshold: 0.3, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
+    threshold: 0.4, // Procentdel af elementet, der skal være synligt før det betragtes som "inView"
   });
 
   return (
-    <section className="pb-24 xl:pb-16">
-      <div className={`flex flex-row justify-around text-h4 py-12 text-cmaccent`}>
-      <USP icon={faShieldHalved} text="Nichespecialister" />
-      <USP icon={faBrain} text="Dybdeindsigt" />
-      <USP icon={faPeopleArrows} text="Bedre match" />
-    </div>
-      <Card
-        className={`${styles.padding} relative flex items-center justify-center min-h-screen bg-transparent shadow-none`}
+    <section className="pb-28 xl:pb-16">
+      <div
+        className={`flex flex-row justify-around text-h4 py-12 text-cmaccent`}
+      >
+        <USP icon={faShieldHalved} text="Nichespecialister" />
+        <USP icon={faBrain} text="Dybdeindsigt" />
+        <USP icon={faPeopleArrows} text="Bedre match" />
+      </div>
+      <section
+        className={`${styles.padding} relative flex items-center justify-center min-h-screen`}
       >
         <BackgroundCircles />
-        <div
-          className={`${styles.padding} xl:bottom-16 relative z-1 flex flex-col items-center justify-center w-[38em] h-[38em] xl:w-[44em] xl:h-[44em] bg-cmwhite/75 shadow-lg rounded-full bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-50 border border-cmdark/5`}
+        <Card
+          className={`${styles.padding} xl:bottom-16 relative z-90 flex flex-col items-center justify-center w-[38em] h-[38em] xl:w-[44em] xl:h-[44em] bg-cmwhite bg-opacity-75 shadow-lg rounded-full bg-clip-padding backdrop-filter backdrop-blur-xl border border-cmdark/5`}
         >
-          <div className="text-center">
+          <CardBody className="text-center">
             <h2 className="text-h2">Hvem er CyberMinds?</h2>
             <h4 className="text-h4">Beskyt din virksomhed mod cybertrusler</h4>
             <p className="text-p p-4">
@@ -99,10 +98,10 @@ const CircleCard = () => {
               Vi tilbyder skræddersyede IT-sikkerhedstjenester, der beskytter
               din virksomhed mod cyberkriminalitet og datasikkerhedsbrud.
             </p>
-          </div>
-          <FilledBtn title="Øg din sikkerhed" url="#kontakt" />
-        </div>
-      </Card>
+          </CardBody>
+          <Primary title="Øg din sikkerhed" url="#kontakt" />
+        </Card>
+      </section>
       <motion.div
         ref={ref}
         variants={circles}
@@ -111,34 +110,38 @@ const CircleCard = () => {
         className="flex justify-center"
       >
         <Card
-          className={`p-6 relative shadow-lg w-[60%] h-full xl:h-[28em] xl:w-2/4 xl:p-8 xl:mb-8 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
+          className={`p-2 mb-4 relative shadow-lg w-[60%] h-full xl:h-[28em] xl:w-2/4 xl:p-8 xl:mb-8 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
         >
-          <CardHeader floated={false}>
+          <CardHeader floated={false} className="inset-0 mb-4 rounded-md">
             <Image
               objectPosition="top"
               objectFit="cover"
               src="/bjarke-profil.webp"
               alt="Bjarke Petersen"
-              className="rounded-lg shadow-md flex"
+              className=" shadow-md flex"
               layout="fill"
             />
           </CardHeader>
-          <CardBody className="flex flex-col gap-2 py-4">
+          <CardBody className="flex flex-col gap-2 inset-0 mb-4">
             <div>
               <h3 className="text-h3">Bjarke Petersen</h3>
               <h6 className="text-h6">IT Security Entrepreneur</h6>
             </div>
 
-            <p className="text-p leading-tight">
+            <p className="text-p ">
               CyberMinds er hjemstedet for Danmarks bedste cybersec freelancere,
               samt industriens go-to for cybersec ydelser.
             </p>
-            <p className="text-p leading-tight">
+            <p className="text-p">
               Vi taler cybersec&apos;sk, vi tager branchens laveste cut og vi
               kan bedre end de fleste, hjælpe med at italesætte
               forretningsbehovet og omsætte det til løsninger.
             </p>
-            <FilledBtn url='https://www.linkedin.com/in/bjarke-n-petersen/' icon={<FontAwesomeIcon icon={faLinkedin} size="xl"/>} title="Skab forbindelse"/>
+            <Primary
+              url="https://www.linkedin.com/in/bjarke-n-petersen/"
+              icon={<FontAwesomeIcon icon={faLinkedin} size="xl" />}
+              title="Skab forbindelse"
+            />
           </CardBody>
         </Card>
       </motion.div>

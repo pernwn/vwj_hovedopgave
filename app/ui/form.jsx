@@ -261,13 +261,13 @@ export default function FormComp() {
           <Button
             type="submit"
             variant="filled"
-            className={`enabled:bg-cmaccent/75 normal-case w-full p-3 text-md font-medium tr5nsitiomediuml ease-linear duration-200  shadow-md enabled:hover:shadow-lg enabled:hover:bg-cmaccent  enabled:hover:cursor-pointer translate-y-2 enabled:hover:translate-y-1 ${
+            className={`enabled:bg-cmaccent/75 w-full h-full py-4 transition ease-linear duration-200 shadow-md enabled:hover:shadow-lg enabled:hover:bg-cmaccent  enabled:hover:cursor-pointer translate-y-0 enabled:hover:-translate-y-1 ${
               isButtonDisabled ? "bg-cmdark/40 text-cmwhite/40" : ""
             }`}
             // code for handling disabled button mode
             // ---disabled={isButtonDisabled}
           >
-            <p className="text-[14pt] tracking-wide">start dialogen</p>
+            <p className="text-h5 font-medium tracking-wide">Start dialogen</p>
           </Button>
         </div>
       </form>

@@ -8,12 +8,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { motion } from "framer-motion";
 
-import { CardHeader, CardBody, Card, Button } from "@material-tailwind/react";
+import { CardHeader, CardBody, Card, Button, CardFooter } from "@material-tailwind/react";
 import Image from "next/legacy/image";
 import {
   faCirclePause,
   faPlayCircle,
 } from "@fortawesome/free-regular-svg-icons";
+import { Secondary } from "./buttons";
+import { faExpand } from "@fortawesome/free-solid-svg-icons";
 
 //Anmeldelseskort opdelt i to: øverst - brugerinfo, nederst - anmeldelsetekst
 export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
@@ -25,17 +27,18 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
         zIndex: 1,
         transition: { duration: 0.4 },
       }}
-      className="p-1 max-w-[22em] min-h-[28em] rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75"
+      
     >
-      <CardBody>
-        <div className="flex flex-row pb-4 w-full h-full space-x-4">
-          <div className="px-2 rounded-full">
+    <Card className="p-2 mx-6 min-w-[10em] min-h-[26em] rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75">
+      <CardHeader className="bg-transparent shadow-none py-2">
+        <div className="flex flex-row pb-4 w-full h-full">
+          <div className="pr-4 rounded-full">
             <Image
               src={avatarImg}
               alt="Customer Img"
               className="rounded-full"
-              width={175}
-              height={175}
+              width={150}
+              height={150}
             />
           </div>
           <div className="w-full space-y-2">
@@ -43,12 +46,15 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
             <h6 className="text-h6 font-light text-cmwhite">{occupation}</h6>
             <Rating rating={stars} />
           </div>
-        </div>
-        <Divider className="bg-cmsecondary/40" />
-        <div className="px-2 py-4 overflow-y-auto">
-          <p className="text-p text-pretty text-cmwhite font-300">{review}</p>
+                  </div> <Divider className="bg-cmsecondary/40" />
+                  </CardHeader>
+       
+        <CardBody className="p-4 overflow-y-auto">
+        <div>
+          <p className="text-p text-pretty text-cmwhite/75 font-300">{review}</p>
         </div>
       </CardBody>
+      </Card>
     </motion.div>
   );
 };
@@ -92,14 +98,16 @@ export const VidCard = ({ title, content, holderImg }) => {
 
 //Pause ikon synligt ved hover
   const handleMouseEnter = () => {
+    if (isPlay) {
     setShowPause(true)
     setIconOpacity(1)
+    } 
   };
 
-//Hvis play er true = Pause ikon forsinder efter 2s når musen er væk
+//Hvis play er true = Pause ikon forsinder efter 5s
   const handleMouseLeave = () => {
     if (isPlay) {
-      const timer = setTimeout(() => setIconOpacity(0), 2000);
+      const timer = setTimeout(() => setIconOpacity(0), 5000);
       return () => clearTimeout(timer)
     }
   };
@@ -119,44 +127,75 @@ export const VidCard = ({ title, content, holderImg }) => {
     return () => clearTimeout(timer)
   }, [isPlay])
 
+
+
   return (
     <Card
-      className={`${styles.flexCenter} flex-col rounded-xl w-full p-2 xl:p-4 m-4 xl:mx-8 bg-cmwhite/50`}
+      className={`grid grid-row-2 rounded-xl w-full h-[28rem] mx-4 overflow-hidden`}
     >
-      <CardHeader onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave} className="w-full relative h-[14rem] shadow-sm">
+      <CardHeader
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`w-full h-full mx-0`}
+      >
         <Image
           src={holderImg}
           layout="fill"
           objectFit="cover"
           alt="Placeholder image"
-
         />
         {/* 
         Ved hvert klik ændrer værdien af isPlay fra true til false og omvendt ved hjælp af setisPlay(!isPlay). 
-        Når isPlay bliver true, starter en timeout, der sætter showPauseIcon til false efter 2 sekunder.
+        Når isPlay bliver true, starter en timeout, der sætter showPauseIcon til false efter 0,3 sekunder.
         */}
         <div
           onClick={handleClick}
-          style={{ //inline styling for at styre overgang af synlighed på ikon
+          style={{
+            //inline styling for at styre overgang af synlighed på ikon
             opacity: showPause ? iconOpacity : 1,
-            transition: ' 0.5s ease-in-out',
+            transition: "0.3s ease-in-out",
           }}
-          className={`${isPlay ? 'bg-cmdark/50' : 'bg-cmdark/50 backdrop-blur-sm'} absolute inset-0 text-cmaccent/50 hover:text-cmaccent flex items-center justify-center rounded transition-all ease-linear duration-300 cursor-pointer`}
+          className={`absolute inset-0 text-cmaccent/70 hover:text-cmaccent flex items-center justify-center transition-opacity ease-linear duration-300 ${
+            isPlay ? "bg-cmdark/50" : "bg-cmdark/60 backdrop-blur-sm"
+          }`}
         >
           {showPause ? (
             isPlay ? (
-              <FontAwesomeIcon icon={faCirclePause} size="3x" />
+              <div className="flex justify-center">
+                <FontAwesomeIcon
+                  icon={faCirclePause}
+                  size="3x"
+                  className="absolute top-28"
+                />
+                <FontAwesomeIcon
+                  icon={faExpand}
+                  className="absolute inset-6 text-h4 text-cmaccent/50 hover:text-cmaccent transition ease-in-out duration-300"
+                />
+              </div>
             ) : (
-              <FontAwesomeIcon icon={faPlayCircle} size="3x" />
-          )
+              <FontAwesomeIcon
+                icon={faPlayCircle}
+                size="3x"
+                className="absolute top-28 "
+              />
+            )
           ) : null}
         </div>
       </CardHeader>
 
-      <CardBody className="flex flex-col justify-center items-center w-full h-1/2 p-2 py-4">
-        <h3 className="text-h5">{title}</h3>
-        <p className="text-p">{content}</p>
+      <CardBody
+        className={`${
+          showPause ? (isPlay ? "opacity-0" : "opacity-1") : "opacity-1"
+        } p-4 pt-16 space-y-8 bg-gradient-to-t from-cmdark via-cmdark/80 to-cmdark/0 transition ease-linear duration-300 flex flex-col justify-between place-self-end w-full h-ful absolute`}
+      >
+        <div className="space-y-2">
+          <h3 className="text-h4 text-cmwhite/80 ">{title}</h3>
+          <p className="text-p text-cmwhite/65 ">{content}</p>
+        </div>
+
+        <div className="w-full h-full">
+          <Secondary title="Læs mere her" url="#" />
+        </div>
       </CardBody>
     </Card>
   );
