@@ -1,5 +1,5 @@
 
-import ClientRender from './components/clientrender';
+import ClientRender from './lib/clientrender';
 import Hero from './components/hero';
 import CircleCard from './components/intro';
 import Benefits from './components/benefits';

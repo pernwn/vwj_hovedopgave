@@ -16,11 +16,11 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Secondary } from "./buttons";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
-import useIntersectionObserver from "../lib/intersec";
+import useIntersectionObserver from "../lib/observer";
 
 //Anmeldelseskort opdelt i to: øverst - brugerinfo, nederst - anmeldelsetekst
 export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.9 });
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.8 });
   return (
     <motion.div
       whileHover={{
@@ -29,10 +29,10 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
         zIndex: 1,
         transition: {duration: 0.4 },
       }}
-      className="mx-2 px-4"
+      className="px-1"
 
     >
-      <Card ref={ref} className={`p-4 min-w-[12rem] max-w-[22rem] min-h-[26rem] transition ease-linear duration-300 ${!isIntersecting ? 'opacity-50 pointer-events-none scale-75' : 'scale-100'} rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75`}>
+      <Card ref={ref} className={`p-4 min-w-[14rem] max-w-[24rem] min-h-[26rem] transition ease-linear duration-300 ${!isIntersecting ? 'opacity-50 pointer-events-none scale-75' : 'scale-100'} rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75`}>
 
           <div className="flex flex-row items-center justify-center py-4">
             <div className="pr-6 rounded-full ">
