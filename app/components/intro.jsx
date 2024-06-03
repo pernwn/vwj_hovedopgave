@@ -110,7 +110,7 @@ const CircleCard = () => {
         className="flex justify-center"
       >
         <Card
-          className={`p-2 mb-4 relative shadow-lg w-[60%] h-full xl:h-[28em] xl:w-2/4 xl:p-8 xl:mb-8 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
+          className={`p-2 mb-4 gap-2 relative shadow-lg w-[60%] h-full xl:h-[28em] xl:w-2/4 xl:p-8 xl:mb-8 grid grid-cols-2 bg-clip-padding backdrop-filter backdrop-blur-lg bg-cmwhite/75 bg-opacity-75 border border-cmdark/5`}
         >
           <CardHeader floated={false} className="inset-0 mb-4 rounded-md">
             <Image
@@ -122,7 +122,7 @@ const CircleCard = () => {
               layout="fill"
             />
           </CardHeader>
-          <CardBody className="flex flex-col gap-2 inset-0 mb-4">
+          <CardBody className="flex flex-col gap-2 inset-0 mb-4 py-4">
             <div>
               <h3 className="text-h3">Bjarke Petersen</h3>
               <h6 className="text-h6">IT Security Entrepreneur</h6>

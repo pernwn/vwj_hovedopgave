@@ -31,7 +31,7 @@ const Benefits = () => {
   return (
     // Sektion med gradient baggrund defineret i tailwind.config og globals css - Responsivt til skærme over 1700px
     <section
-      className={`bg-gradient-bl ${styles.padding} space-y-24 xl:space-y-28 w-full h-full rounded-tl-[12em] rounded-br-[12em]`}
+      className={`bg-gradient-bl ${styles.padding} space-y-20 xl:space-y-28 w-full h-full rounded-tl-[12em] rounded-br-[12em]`}
     >
       {/* Services */}
       <div
@@ -40,7 +40,10 @@ const Benefits = () => {
         {/* Anvendelse af tidligere defineret komponent 'Para' */}
         <Para
           header="Skræddersyet IT-sikkerhedseksperthjælp"
-          body="Vi specialiserer os i at forbinde virksomheder med de bedste IT-sikkerhedsfreelancere, der imødekommer dine behov. Med vores omfattende netværk sikrer vi adgang til de mest kompetente eksperter."
+          body="Få et indblik i, hvordan vi prioriterer
+                kvalitet, pålidelighed og effektivitet i
+                alle vores handlinger. Se her, hvordan vores dedikation til
+                disse værdier former hver interaktion og beslutning, vi træffer."
         />
         <div className="flex items-center justify-center gap-4 px-12 my-4 mb-8 w-full xl:w-3/4">
           <SimpleCardTwo
@@ -51,7 +54,7 @@ const Benefits = () => {
           <SimpleCardTwo
             content="Vi forstår vores kunders unikke behov og tilpasser vores løsninger til at imødekomme dem, hvilket skaber værdifulde partnerskaber."
             title="Kundeindsigt"
-            icon={<FontAwesomeIcon icon={faLightbulb} size="xl"/>}
+            icon={<FontAwesomeIcon icon={faLightbulb} size="xl" />}
           />
           <SimpleCardTwo
             content="CyberMinds finder de bedste IT-talenter fra hele verden for at styrke din virksomheds digitale forsvar og innovation."
@@ -71,7 +74,7 @@ const Benefits = () => {
       <div className={`flex-col ${styles.flexCenter} w-full py-8 h-auto`}>
         <Para
           header="Hvorfor vælge CyberMinds?"
-          body="Vi specialiserer os i at forbinde virksomheder med de bedste IT-sikkerhedsfreelancere, der imødekommer dine behov. Med vores omfattende netværk sikrer vi adgang til de mest kompetente eksperter."
+          body="Få indsigt i, hvordan virksomheder som din har oplevet øget sikkerhed og tillid med CyberMinds ved deres side."
         />
         {/* Importeret komponent til at fremvise anmeldelser - funktionaliteter og styles defineret i separat dokument */}
         <ReviewComp />

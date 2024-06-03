@@ -20,7 +20,7 @@ export const Primary = (props) => {
     return (
       <Link href={url} target="_blank" rel="noopener noreferrer">
         <Button
-          className={`group w-fit flex items-center justify-center translate-y-4 hover:shadow-lg hover:bg-cmdark/5 border-2 border-cmaccent hover:translate-y-3 rounded-full py-2 px-8 bg-cmaccent active:translate-y-2 duration-300 ease-linear transition`}
+          className={`group w-fit flex items-center justify-center translate-y-4 hover:shadow-lg hover:bg-cmdark/5 hover:ring-2 hover:ring-cmaccent hover:translate-y-3 rounded-full py-2 px-8 bg-cmaccent active:translate-y-2 duration-300 ease-linear transition`}
         >
           <p className="normal-case text-cmwhite group-hover:text-cmaccent flex items-center gap-4">
             {icon} {title}
@@ -33,7 +33,7 @@ export const Primary = (props) => {
   return (
     <Link href={url}>
       <Button
-        className={`group w-[16rem] flex items-center justify-center gap-2 translate-y-4 hover:drop-shadow-lg hover:bg-cmwhite/5 border-2 border-cmaccent hover:translate-y-3 rounded-full py-4 px-8 bg-cmaccent active:translate-y-2 duration-300 ease-linear transition`}
+        className={`group w-[16rem] flex items-center justify-center gap-2 translate-y-4 hover:drop-shadow-lg hover:bg-cmwhite/5 hover:ring-2 hover:ring-cmaccent hover:translate-y-3 rounded-full py-4 px-8 bg-cmaccent/80 active:translate-y-2 duration-300 ease-linear transition`}
       >
         
         <p className="normal-case text-cmwhite group-hover:text-cmaccent">

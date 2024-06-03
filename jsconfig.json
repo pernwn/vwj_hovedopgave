@@ -16,7 +16,8 @@
     ".next/types/**/*.js",
     "scripts/seed.js",
     "app/layout.js",
-    "app/page.js"
+    "app/page.js",
+    "app/not-found.js"
   ],
   "exclude": ["node_modules"]
 }

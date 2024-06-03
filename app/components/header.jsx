@@ -8,6 +8,7 @@ import { Button } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import styles from "../style";
+import Link from "next/link"
 
 const Header = () => {
 
@@ -21,10 +22,10 @@ const Header = () => {
     >
       <CyberMindsWhiteLogo
         className="w-75 h-75"
-        alt="CyberMinds Logo Color White"
+        alt="CyberMinds Logo White"
       />
 
-
+<Link href=":">
       <Button
         onMouseEnter={handleHover}
         onMouseLeave={handleNotHover}
@@ -53,6 +54,7 @@ const Header = () => {
           </p>
         )}
       </Button>
+      </Link>
     </div>
   );
 };

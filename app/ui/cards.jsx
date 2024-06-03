@@ -67,7 +67,7 @@ export const SimpleCardTwo = ({ content, title, icon }) => {
     <Card
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`${styles.flexCenter}  w-full min-h-[16rem] max-h-[18rem] overflow-hidden hover:bg-cmprimary/50 ring-2 ring-cmsecondary/10 hover:ring-cmprimary transition ease-linear rounded-lg shadow-lg bg-cmsecondary/5`}
+      className={`${styles.flexCenter} w-full min-h-[16rem] max-h-[18rem] overflow-hidden bg-cmsecondary/10 px-4 hover:bg-cmprimary/50 ring-2 ring-cmsecondary/10 hover:ring-cmprimary transition ease-linear rounded-lg shadow-lg `}
     >
       <CardBody className="relative group space-y-2">
         <h5
@@ -194,7 +194,7 @@ export const VidCard = ({ title, content, holderImg }) => {
         </div>
 
         <div className="w-full h-full">
-          <Secondary title="Læs mere her" url="#" />
+          <Secondary title="Find ud af hvordan" url=":" />
         </div>
       </CardBody>
     </Card>

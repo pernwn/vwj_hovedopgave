@@ -74,10 +74,10 @@ const ExplainerCard = () => {
             <div className="text-center">
               <h2 className="text-h2">Din sikkerhed, vores ansvar</h2>
               <p className="text-p mx-12 xl:mx-24">
-                Få et indblik i, hvordan vi prioriterer <b>kvalitet</b>,
-                <b>pålidelighed</b> og <b>effektivitet</b> i alle vores
-                handlinger. Se her, hvordan vores dedikation til disse værdier
-                former hver interaktion og beslutning, vi træffer.
+                Vi specialiserer os i at forbinde virksomheder med de bedste
+                IT-sikkerhedsfreelancere, der imødekommer dine behov. Med vores
+                omfattende netværk sikrer vi adgang til de mest kompetente
+                eksperter. 
               </p>
             </div>
             {/* Container til 2 billedkort som originalt var tænkt til videoer* (Note i cards.jsx) */}
@@ -87,7 +87,7 @@ const ExplainerCard = () => {
                 content="Vores eksperter overvåger og reagerer på sikkerhedsrisici døgnet rundt for at sikre dine data og forretningskontinuitet."
                 holderImg="/placeholder1.webp"
               />
-              <VidCard  
+              <VidCard
                 title="Avanceret Cybersecurity"
                 content="Vi anvender en række avancerede teknologier og metoder for at sikre, at din virksomhed er rustet til at modstå cyberangreb."
                 holderImg="/placeholder2.webp"

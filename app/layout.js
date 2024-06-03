@@ -1,8 +1,9 @@
-
+'use client'
 
 import '@/app/globals.css'
 import { Josefin_Sans, Lato } from 'next/font/google';
 import Head from 'next/head';
+import { metadata } from './metadata';
 
 const josefin_Sans = Josefin_Sans({
   weight: "variable",
@@ -16,22 +17,17 @@ const lato = Lato({
   variable:"--font-lato"
 });
 
-export const metadata =  {
-  title: {
-    template: "%s | CyberMinds",
-    default: "CyberMinds",
-  },
-  description: "Victoria W Johansen - Multimediedesign, Hovedopgave 2024",
-};
 
 export default function RootLayout({ children }) {
+  
+
   return (
     <html lang="en" className="background--custom" >
       <Head>
-        <title>CyberMinds</title>
+        <title>{metadata.title.default}</title>
         <meta
           name="description"
-          content="Victoria W Johansen - Multimediedesign, Hovedopgave 2024"
+          content={metadata.description}
         />
         <link rel="icon" href="/favicon.ico" />
         <link
