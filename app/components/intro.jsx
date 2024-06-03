@@ -122,7 +122,7 @@ const CircleCard = () => {
               layout="fill"
             />
           </CardHeader>
-          <CardBody className="flex flex-col gap-2 inset-0 mb-4 py-4">
+          <CardBody className="flex flex-col gap-2 inset-0 py-4">
             <div>
               <h3 className="text-h3">Bjarke Petersen</h3>
               <h6 className="text-h6">IT Security Entrepreneur</h6>
