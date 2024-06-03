@@ -19,7 +19,7 @@ import {
 const Para = ({ header, body }) => {
   return (
     <div
-      className={`${styles.flexCenter} text-center flex-col w-4/5 xl:w-2/5 pb-8 space-y-4`}
+      className={`${styles.flexCenter} text-center flex-col w-4/5 xl:w-2/4 pb-8 space-y-4`}
     >
       <h2 className="text-h2 text-cmwhite">{header}</h2>
       <p className="text-h5 text-cmwhite/90 leading-tight">{body}</p>

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { motion } from "framer-motion";
 
-import { CardHeader, CardBody, Card, Button, CardFooter } from "@material-tailwind/react";
+import { CardHeader, CardBody, Card } from "@material-tailwind/react";
 import Image from "next/legacy/image";
 import {
   faCirclePause,
@@ -16,44 +16,49 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Secondary } from "./buttons";
 import { faExpand } from "@fortawesome/free-solid-svg-icons";
+import useIntersectionObserver from "../lib/intersec";
 
 //Anmeldelseskort opdelt i to: øverst - brugerinfo, nederst - anmeldelsetekst
 export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.9 });
   return (
     <motion.div
       whileHover={{
         scale: 1.02,
         y: -10,
         zIndex: 1,
-        transition: { duration: 0.4 },
+        transition: {ease:'linear', duration: 0.4 },
       }}
-      
+      className="mx-2 px-4"
+
     >
-    <Card className="p-2 mx-6 min-w-[10em] min-h-[26em] rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75">
-      <CardHeader className="bg-transparent shadow-none py-2">
-        <div className="flex flex-row pb-4 w-full h-full">
-          <div className="pr-4 rounded-full">
-            <Image
-              src={avatarImg}
-              alt="Customer Img"
-              className="rounded-full"
-              width={150}
-              height={150}
-            />
-          </div>
-          <div className="w-full space-y-2">
-            <h5 className="text-h5 mt-3 font-semibold text-cmwhite">{name}</h5>
-            <h6 className="text-h6 font-light text-cmwhite">{occupation}</h6>
-            <Rating rating={stars} />
-          </div>
-                  </div> <Divider className="bg-cmsecondary/40" />
-                  </CardHeader>
-       
-        <CardBody className="p-4 overflow-y-auto">
-        <div>
-          <p className="text-p text-pretty text-cmwhite/75 font-300">{review}</p>
-        </div>
-      </CardBody>
+      <Card ref={ref} className={`p-4 min-w-[12rem] max-w-[22rem] min-h-[26rem] transition-transform ease-in-out duration-400 ${!isIntersecting ? 'opacity-50 pointer-events-none scale-75' : 'scale-100'} rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75`}>
+
+          <div className="flex flex-row items-center justify-center py-4">
+            <div className="pr-6 rounded-full ">
+              <Image
+                src={avatarImg}
+                alt="Customer Img"
+                className="rounded-full"
+                width={100}
+                height={100}
+              />
+            </div>
+            <div className="w-1/2 space-y-2">
+              <h5 className="text-h5 mt-3 font-semibold text-cmwhite">
+                {name}
+              </h5>
+              <h6 className="text-h6 font-light text-cmwhite">{occupation}</h6>
+              <Rating rating={stars} />
+            </div>
+          </div>{" "}
+          <Divider className="bg-cmsecondary/40" />
+
+            <p className="text-p text-pretty text-cmwhite/75 font-300 p-4">
+              {review}
+            </p>
+
+
       </Card>
     </motion.div>
   );
