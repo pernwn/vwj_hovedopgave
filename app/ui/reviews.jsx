@@ -74,7 +74,7 @@ setCurrentSlide(
                     }}
                     transition={{
                       ease: "linear",
-                      duration: 0.6,
+                      duration: 0.8,
                     }}    
                     style={{ scrollSnapType: 'x mandatory' }}
                   >
