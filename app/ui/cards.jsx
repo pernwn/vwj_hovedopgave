@@ -32,7 +32,7 @@ export const ReviewCard = ({ name, occupation, review, stars, avatarImg }) => {
       className="mx-2 px-4"
 
     >
-      <Card ref={ref} className={`p-4 min-w-[12rem] max-w-[22rem] min-h-[26rem] transition-transform ease duration-400 ${!isIntersecting ? 'opacity-50 pointer-events-none scale-75' : 'scale-100'} rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75`}>
+      <Card ref={ref} className={`p-4 min-w-[12rem] max-w-[22rem] min-h-[26rem] transition ease-linear duration-300 ${!isIntersecting ? 'opacity-50 pointer-events-none scale-75' : 'scale-100'} rounded-lg shadow-xl bg-cmsecondary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-15 border-2 border-cmsecondary/75`}>
 
           <div className="flex flex-row items-center justify-center py-4">
             <div className="pr-6 rounded-full ">
